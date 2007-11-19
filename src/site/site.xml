@@ -11,21 +11,19 @@
   <skin>
     <groupId>org.terracotta.maven.skins</groupId>
     <artifactId>simple-skin</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.1-SNAPSHOT</version>
   </skin>
-  <publishDate position="right" format="yyyy-MM-dd"/>
+  <publishDate position="right" format="yyyy.MM.dd HH.mm.ss Z"/>
   <body>
     <links>
       <item name="forge"           href="http://forge.terracotta.org/"/>
       <item name="terracotta.org"  href="http://www.terracotta.org/"/>
     </links>
-    <!--
-    <menu name="Reports" ref="reports"/>
-    <menu name="Modules" ref="modules"/>
-    -->
   </body>
   <poweredBy>
-    <logo name="Terracotta" href="http://www.terracotta.org/" img="http://www.terracotta.org/img/logo-small.png"/>
+    <logo name="Terracotta" 
+      href="http://www.terracotta.org/" 
+      img="http://www.terracotta.org/img/logo-small.png"/>
   </poweredBy>
 </project>
 
