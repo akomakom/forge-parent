@@ -89,7 +89,7 @@
               <report>mailing-list</report>
               <report>scm</report>
               <report>license</report>
-              <!-- report>project-team</report -->
+              <report>project-team</report>
               <!-- report>cim</report -->
             </reports>
           </reportSet>
@@ -172,4 +172,3 @@
     </pluginRepository>
   </pluginRepositories>  
 </project>
-
