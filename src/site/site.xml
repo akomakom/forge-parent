@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+
+  All content copyright (c) 2003-2007 Terracotta, Inc.,
+  except as may otherwise be noted in a separate copyright notice.
+  All rights reserved.
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <skin>
+    <groupId>org.terracotta.maven.skins</groupId>
+    <artifactId>simple-skin</artifactId>
+    <version>1.0.2</version>
+  </skin>
+  <publishDate position="right" format="yyyy.MM.dd HH.mm.ss Z"/>
+  <body>
+    <links>
+      <item name="forge"           href="http://forge.terracotta.org/"/>
+      <item name="terracotta.org"  href="http://www.terracotta.org/"/>
+    </links>
+  </body>
+  <poweredBy>
+    <logo name="Terracotta" 
+      href="http://www.terracotta.org/" 
+      img="http://www.terracotta.org/img/logo-small.png"/>
+  </poweredBy>
+</project>
+
