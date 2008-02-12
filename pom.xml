@@ -45,6 +45,39 @@
     </site>
   </distributionManagement>
 
+  <profiles>
+    <profile>
+      <id>snapshot</id>
+      <distributionManagement>
+        <repository>
+          <id>forge-artifacts</id>
+          <name>Project Artifacts Repository</name>
+          <url>scpexe://kong/export1/maven2-snapshots/snapshots</url>
+        </repository>
+        <site>
+          <id>forge-site</id>
+          <name>Project Sites Server</name>
+          <url>scpexe://orgstage/export1/forge2/snapshots/</url>
+        </site>
+      </distributionManagement>
+    </profile>
+    <profile>
+      <id>release</id>
+      <distributionManagement>
+        <repository>
+          <id>forge-artifacts</id>
+          <name>Project Artifacts Repository</name>
+          <url>scpexe://kong/export1/maven2-snapshots/releases</url>
+        </repository>
+        <site>
+          <id>forge-site</id>
+          <name>Project Sites Server</name>
+          <url>scpexe://orgstage/export1/forge2/releases/</url>
+        </site>
+      </distributionManagement>
+    </profile>
+  </profiles>
+
   <issueManagement>
     <system>JIRA</system>
     <url>https://jira.terracotta.org/jira/browse/FORGE/component/${artifactId}</url>
