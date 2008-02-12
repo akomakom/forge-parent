@@ -19,7 +19,7 @@
 
   <groupId>org.terracotta.forge</groupId>
   <artifactId>forge-parent</artifactId>
-  <version>1.0.8</version>
+  <version>1.0.9-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>forge-parent</name>
