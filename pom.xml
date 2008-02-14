@@ -57,7 +57,7 @@
         <site>
           <id>forge-site</id>
           <name>Project Sites Server</name>
-          <url>scpexe://orgstage/export1/forge2/snapshots/</url>
+          <url>scpexe://orgstage/export1/forge2/snapshots/projects/</url>
         </site>
       </distributionManagement>
     </profile>
@@ -72,7 +72,7 @@
         <site>
           <id>forge-site</id>
           <name>Project Sites Server</name>
-          <url>scpexe://orgstage/export1/forge2/releases/</url>
+          <url>scpexe://orgstage/export1/forge2/releases/projects/</url>
         </site>
       </distributionManagement>
     </profile>
