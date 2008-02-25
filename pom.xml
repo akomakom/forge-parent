@@ -52,7 +52,7 @@
         <repository>
           <id>forge-artifacts</id>
           <name>Project Artifacts Repository</name>
-          <url>scpexe://kong/export1/maven2-snapshots/snapshots</url>
+          <url>scpexe://kong/export1/forge-artifacts/snapshots</url>
         </repository>
         <site>
           <id>forge-site</id>
@@ -79,7 +79,7 @@
         <repository>
           <id>forge-artifacts</id>
           <name>Project Artifacts Repository</name>
-          <url>scpexe://kong/export1/maven2-snapshots/releases</url>
+          <url>scpexe://kong/export1/forge-artifacts/releases</url>
         </repository>
         <site>
           <id>forge-site</id>
