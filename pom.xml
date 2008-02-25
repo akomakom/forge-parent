@@ -60,6 +60,18 @@
           <url>scpexe://orgstage/export1/forge2/snapshots/projects/</url>
         </site>
       </distributionManagement>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-deploy-plugin</artifactId>
+            <configuration>
+              <altDeploymentRepository>${deploy.altRepositoryRoot}/snapshots</altDeploymentRepository>
+              <updateReleaseInfo>false</updateReleaseInfo>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
     </profile>
     <profile>
       <id>release</id>
@@ -75,6 +87,18 @@
           <url>scpexe://orgstage/export1/forge2/releases/projects/</url>
         </site>
       </distributionManagement>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-deploy-plugin</artifactId>
+            <configuration>
+              <altDeploymentRepository>${deploy.altRepositoryRoot}/releases</altDeploymentRepository>
+              <updateReleaseInfo>true</updateReleaseInfo>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
     </profile>
   </profiles>
 
