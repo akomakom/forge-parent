@@ -52,7 +52,7 @@
         <repository>
           <id>forge-artifacts</id>
           <name>Project Artifacts Repository</name>
-          <url>scpexe://kong/export1/forge-artifacts/snapshots</url>
+          <url>scpexe://kong/shares/forge-artifacts/snapshots</url>
         </repository>
         <site>
           <id>forge-site</id>
