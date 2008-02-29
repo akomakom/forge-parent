@@ -1,0 +1,87 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.terracotta.forge</groupId>
+    <artifactId>forge-parent</artifactId>
+    <version>1.0.9</version>
+  </parent>
+
+  <groupId>org.terracotta.forge</groupId>
+  <artifactId>tim-system-tests-parent</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <properties>
+    <forgeTags>Parent POM</forgeTags>
+    <tc.config>tc-config.xml</tc.config>
+    <tc.bootjar>${project.build.directory}/dso-boot.jar</tc.bootjar>
+    <bootclasspath>${tc.bootjar}</bootclasspath>
+    <tc.tests.info.l2.startup.mode>internal</tc.tests.info.l2.startup.mode>
+    <surefire.argLine>-Xbootclasspath/p:${bootclasspath} -Dtc.base-dir=${project.build.directory} -Dtc.config=${tc.config} -Dcom.tc.l1.modules.repositories=file://${settings.localRepository} -Dtc.dso.globalmode=false -Dtc.tests.info.l2.startup.mode=${tc.tests.info.l2.startup.mode} -Dtc.tests.info.bootjars.normal=${tc.bootjar}</surefire.argLine>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>testCompile</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.3</version>
+        <executions>
+          <execution>
+            <phase>test</phase>
+            <goals>
+              <goal>test</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <forkMode>always</forkMode>
+          <useSystemClassLoader>true</useSystemClassLoader>
+          <argLine>${surefire.argLine}</argLine>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.terracotta.maven.plugins</groupId>
+        <artifactId>tc-maven-plugin</artifactId>
+        <version>1.1.0-SNAPSHOT</version>
+        <executions>
+          <execution>
+            <id>bootjar</id>
+            <phase>generate-test-resources</phase>
+            <goals>
+              <goal>bootjar</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>tcclean</id>
+            <phase>clean</phase>
+            <goals>
+              <goal>clean</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <overwriteBootjar>false</overwriteBootjar>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+
+  <scm>
+    <connection>scm:git:git@github.com:Terracotta-OSS/forge-parent.git</connection>
+    <developerConnection>scm:git:https://github.com/Terracotta-OSS/forge-parent.git</developerConnection>
+    <url>https://github.com/Terracotta-OSS/forge-parent</url>
+  </scm>
+</project>
