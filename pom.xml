@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!--
 
-  All content copyright (c) 2003-2007 Terracotta, Inc.,
+  All content copyright (c) 2003-2008 Terracotta, Inc.,
   except as may otherwise be noted in a separate copyright notice.
   All rights reserved.
 
@@ -32,19 +32,6 @@
     <url>https://github.com/Terracotta-OSS/forge-parent</url>
   </scm>
 
-  <distributionManagement>
-    <repository>
-      <id>forge-artifacts</id>
-      <name>Project Artifacts Repository</name>
-      <url>scpexe://kong/export1/maven2</url>
-    </repository>
-    <site>
-      <id>forge-site</id>
-      <name>Project Sites Server</name>
-      <url>scpexe://orgstage/export1/forge/projects/</url>
-    </site>
-  </distributionManagement>
-
   <profiles>
     <profile>
       <id>snapshot</id>
@@ -57,7 +44,7 @@
         <site>
           <id>forge-site</id>
           <name>Project Sites Server</name>
-          <url>scpexe://orgstage/export1/forge2/snapshots/projects/</url>
+          <url>scpexe://orgstage/export1/forge/snapshots/projects/</url>
         </site>
       </distributionManagement>
       <build>
@@ -66,7 +53,7 @@
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-deploy-plugin</artifactId>
             <configuration>
-              <altDeploymentRepository>${deploy.altRepositoryRoot}/snapshots</altDeploymentRepository>
+              <altDeploymentRepository>${deploy.altRepositoryRoot}</altDeploymentRepository>
               <updateReleaseInfo>false</updateReleaseInfo>
             </configuration>
           </plugin>
@@ -79,12 +66,12 @@
         <repository>
           <id>forge-artifacts</id>
           <name>Project Artifacts Repository</name>
-          <url>scpexe://kong/export1/forge-artifacts/releases</url>
+          <url>scpexe://kong/shares/forge-artifacts/releases</url>
         </repository>
         <site>
           <id>forge-site</id>
           <name>Project Sites Server</name>
-          <url>scpexe://orgstage/export1/forge2/releases/projects/</url>
+          <url>scpexe://orgstage/export1/forge/releases/projects/</url>
         </site>
       </distributionManagement>
       <build>
@@ -93,7 +80,7 @@
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-deploy-plugin</artifactId>
             <configuration>
-              <altDeploymentRepository>${deploy.altRepositoryRoot}/releases</altDeploymentRepository>
+              <altDeploymentRepository>${deploy.altRepositoryRoot}</altDeploymentRepository>
               <updateReleaseInfo>true</updateReleaseInfo>
             </configuration>
           </plugin>
