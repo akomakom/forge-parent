@@ -216,5 +216,16 @@
         <enabled>true</enabled>
       </snapshots>
     </pluginRepository>
-  </pluginRepositories>  
+  </pluginRepositories>
+
+  <!-- Include empty distributionManagement section so that we can specify
+       deployment repository using the -DaltDeploymentRepository option with
+       the mvn deploy command. -->
+  <distributionManagement>
+    <repository>
+      <id></id>
+      <name></name>
+      <url></url>
+    </repository>
+  </distributionManagement>
 </project>
