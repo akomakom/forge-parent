@@ -11,7 +11,7 @@
 
   <groupId>org.terracotta.forge</groupId>
   <artifactId>forge-parent</artifactId>
-  <version>1.0.11-SNAPSHOT</version>
+  <version>1.0.11</version>
   <packaging>pom</packaging>
 
   <name>forge-parent</name>
@@ -223,9 +223,9 @@
        the mvn deploy command. -->
   <distributionManagement>
     <repository>
-      <id></id>
-      <name></name>
-      <url></url>
+      <id />
+      <name />
+      <url />
     </repository>
   </distributionManagement>
 </project>
