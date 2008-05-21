@@ -38,7 +38,7 @@
         <site>
           <id>forge-site</id>
           <name>Project Sites Server</name>
-          <url>${distributionManagement.site.url}</url>
+          <url>${tc.distributionManagement.site.url}</url>
         </site>
       </distributionManagement>
       <build>
@@ -67,7 +67,7 @@
         <site>
           <id>forge-site</id>
           <name>Project Sites Server</name>
-          <url>${distributionManagement.site.url}</url>
+          <url>${tc.distributionManagement.site.url}</url>
         </site>
       </distributionManagement>
       <build>
