@@ -31,7 +31,8 @@
         <repository>
           <id>forge-artifacts</id>
           <name>Project Artifacts Repository</name>
-          <url>${distributionManagement.repository.url}</url>
+          <url>kong::default::file:///shares/forge-artifacts/snapshots</url>
+          <!-- url>${distributionManagement.repository.url}</url -->
         </repository>
         <site>
           <id>forge-site</id>
@@ -58,7 +59,8 @@
         <repository>
           <id>forge-artifacts</id>
           <name>Project Artifacts Repository</name>
-          <url>${distributionManagement.repository.url}</url>
+          <url>kong::default::file:///shares/forge-artifacts/releases</url>
+          <!-- url>${distributionManagement.repository.url}</url -->
         </repository>
         <site>
           <id>forge-site</id>
