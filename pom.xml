@@ -1,4 +1,4 @@
-<project xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd' xmlns='http://maven.apache.org/POM/4.0.0'>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <properties>
     <forgeTags>Parent POM</forgeTags>
   </properties>
@@ -11,7 +11,7 @@
 
   <groupId>org.terracotta.forge</groupId>
   <artifactId>forge-parent</artifactId>
-  <version>1.0.12-SNAPSHOT</version>
+  <version>1.0.12</version>
   <packaging>pom</packaging>
 
   <name>forge-parent</name>
@@ -225,9 +225,9 @@
        the mvn deploy command. -->
   <distributionManagement>
     <repository>
-      <id/>
-      <name/>
-      <url/>
+      <id />
+      <name />
+      <url />
     </repository>
   </distributionManagement>
 </project>
