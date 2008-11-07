@@ -138,7 +138,7 @@
         <reportSets>
           <reportSet>
             <reports>
-              <report>index</report> 
+              <report>index</report>
               <report>dependencies</report>
               <report>issue-tracking</report>
               <report>mailing-list</report>
@@ -151,7 +151,9 @@
         </reportSets>
       </plugin>
       <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
+        <version>2.4</version>
         <configuration>
           <aggregate>true</aggregate>
         </configuration>
