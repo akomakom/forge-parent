@@ -195,28 +195,6 @@
       <plugins>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-assembly-plugin</artifactId>
-          <version>2.2-beta-2</version>
-          <configuration>
-            <!--
-            <descriptorRefs>
-              <descriptorRef>src</descriptorRef>
-              <descriptorRef>bin</descriptorRef>
-            </descriptorRefs>
-            -->
-            <outputDirectory>${project.build.directory}/site/downloads</outputDirectory>
-          </configuration>
-          <executions>
-            <execution>
-              <phase>site</phase>
-              <goals>
-                <goal>assembly</goal>
-              </goals>
-            </execution>
-          </executions>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-source-plugin</artifactId>
           <executions>
             <execution>
