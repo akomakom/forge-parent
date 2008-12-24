@@ -206,6 +206,17 @@
             </execution>
           </executions>
         </plugin>
+        <plugin>
+           <groupId>org.apache.maven.plugins</groupId>
+           <artifactId>maven-assembly-plugin</artifactId>
+           <configuration>
+              <descriptorRefs>
+                 <descriptorRef>src</descriptorRef>
+                 <descriptorRef>bin</descriptorRef>
+              </descriptorRefs>
+              <outputDirectory>${project.build.directory}/site/downloads</outputDirectory>
+           </configuration>
+        </plugin>
       </plugins>
     </pluginManagement>
     <plugins>
@@ -221,6 +232,10 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-source-plugin</artifactId>
+      </plugin>
+      <plugin>
+         <groupId>org.apache.maven.plugins</groupId>
+         <artifactId>maven-assembly-plugin</artifactId>
       </plugin>
     </plugins>
   </build>
