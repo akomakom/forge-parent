@@ -207,6 +207,13 @@
             </execution>
           </executions>
         </plugin>
+        <!--
+           
+        if ff descriptorRefs are defined and the child project also happens to have a descriptors section
+        that configure source and binary packaging, then the child project must disable the descriptorRefs
+        defined in this POM, by specifying <descriptorRefs/> in the configuration section of the child
+        project's maven-assembly-plugin configuration section.
+        
         <plugin>
            <groupId>org.apache.maven.plugins</groupId>
            <artifactId>maven-assembly-plugin</artifactId>
@@ -218,6 +225,8 @@
               <outputDirectory>${project.build.directory}/site/downloads</outputDirectory>
            </configuration>
         </plugin>
+        
+        -->
       </plugins>
     </pluginManagement>
     
@@ -234,10 +243,6 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-source-plugin</artifactId>
-      </plugin>
-      <plugin>
-         <groupId>org.apache.maven.plugins</groupId>
-         <artifactId>maven-assembly-plugin</artifactId>
       </plugin>
     </plugins>
   </build>
