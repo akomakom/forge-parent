@@ -1,2 +1,5 @@
 README
 ------
+
+Use this POM as parent for for Terracotta Forge Maven projects.
+
