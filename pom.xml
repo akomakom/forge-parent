@@ -132,13 +132,6 @@
     </mailingList>
   </mailingLists>
 
-  <licenses>
-    <license>
-      <name>Terracotta Public License</name>
-      <url>http://www.terracotta.org/license.txt</url>
-    </license>
-  </licenses>
-
   <reporting>
     <plugins>
       <plugin>
