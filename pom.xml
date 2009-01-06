@@ -18,6 +18,13 @@
   <description>Parent POM for Terracotta Forge projects</description>
   <url>http://forge.terracotta.org/</url>
 
+  <licenses>
+    <license>
+      <name>Terracotta Public License</name>
+      <url>http://www.terracotta.org/license.txt</url>
+    </license>
+  </licenses>
+
   <scm>
     <connection>scm:git:git@github.com:Terracotta-OSS/forge-parent.git</connection>
     <developerConnection>scm:git:https://github.com/Terracotta-OSS/forge-parent.git</developerConnection>
