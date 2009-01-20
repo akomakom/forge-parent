@@ -11,7 +11,7 @@
 
   <groupId>org.terracotta.forge</groupId>
   <artifactId>forge-parent</artifactId>
-  <version>1.0.15-SNAPSHOT</version>
+  <version>1.0.15</version>
   <packaging>pom</packaging>
 
   <name>forge-parent</name>
@@ -211,7 +211,7 @@
            
         if ff descriptorRefs are defined and the child project also happens to have a descriptors section
         that configure source and binary packaging, then the child project must disable the descriptorRefs
-        defined in this POM, by specifying <descriptorRefs/> in the configuration section of the child
+        defined in this POM, by specifying <descriptorRefs /> in the configuration section of the child
         project's maven-assembly-plugin configuration section.
         
         <plugin>
