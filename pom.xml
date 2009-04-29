@@ -117,18 +117,18 @@
   <mailingLists>
     <mailingList>
       <name>Forge Dev List</name>
-      <subscribe>tc-forge-dev-subscribe@terracotta.org</subscribe>
-      <unsubscribe>tc-forge-dev-unsubscribe@terracotta.org</unsubscribe>
+      <subscribe>tc-forge-dev-subscribe@lists.terracotta.org</subscribe>
+      <unsubscribe>tc-forge-dev-unsubscribe@lists.terracotta.org</unsubscribe>
     </mailingList>
     <mailingList>
       <name>Forge User List</name>
-      <subscribe>tc-forge-user-subscribe@terracotta.org</subscribe>
-      <unsubscribe>tc-forge-user-unsubscribe@terracotta.org</unsubscribe>
+      <subscribe>tc-forge-user-subscribe@lists.terracotta.org</subscribe>
+      <unsubscribe>tc-forge-user-unsubscribe@lists.terracotta.org</unsubscribe>
     </mailingList>
     <mailingList>
       <name>Forge Announce List</name>
-      <subscribe>tc-forge-announce-subscribe@terracotta.org</subscribe>
-      <unsubscribe>tc-forge-announce-unsubscribe@terracotta.org</unsubscribe>
+      <subscribe>tc-forge-announce-subscribe@lists.terracotta.org</subscribe>
+      <unsubscribe>tc-forge-announce-unsubscribe@lists.terracotta.org</unsubscribe>
     </mailingList>
   </mailingLists>
 
