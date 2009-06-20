@@ -171,6 +171,7 @@
   </dependencies>
 
   <build>
+
     <extensions>
       <extension>
         <groupId>org.apache.maven.wagon</groupId>
@@ -245,6 +246,11 @@
             </configuration>
           </execution>
         </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.terracotta.plugin</groupId>
+        <artifactId>maven-depdb-plugin</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
       </plugin>
     </plugins>
   </build>
