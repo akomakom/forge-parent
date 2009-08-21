@@ -30,7 +30,7 @@
 
   <properties>
     <forgeTags>Parent POM</forgeTags>
-    <depdb.version>1.0.0-SNAPSHOT</depdb.version>
+    <depdb.version>1.0.1-SNAPSHOT</depdb.version>
   </properties>
   
   <profiles>
