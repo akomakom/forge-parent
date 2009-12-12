@@ -276,6 +276,14 @@
         <artifactId>maven-depdb-plugin</artifactId>
         <version>${depdb.version}</version>
       </plugin>
+      <plugin>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <configuration>
+          <tasks>
+            <echo message="PROJECT_VERSION:${project.version}" />
+          </tasks>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
 
