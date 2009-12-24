@@ -317,9 +317,9 @@
        the mvn deploy command. -->
   <distributionManagement>
     <repository>
-      <id />
-      <name />
-      <url />
+      <id>kong</id>
+      <name>TC internal repo</name>
+      <url>file:/shares/maven2</url>
     </repository>
   </distributionManagement>
 </project>
