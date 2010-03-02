@@ -320,6 +320,7 @@
       <id>kong</id>
       <name>TC internal repo</name>
       <url>file:/shares/maven2</url>
+	  <uniqueVersion>false</uniqueVersion>
     </repository>
   </distributionManagement>
 </project>
