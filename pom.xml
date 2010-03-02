@@ -30,7 +30,7 @@
 
   <properties>
     <forgeTags>Parent POM</forgeTags>
-    <depdb.version>1.0.1-SNAPSHOT</depdb.version>
+    <depdb.version>1.0.0</depdb.version>
   </properties>
   
   <profiles>
@@ -258,7 +258,6 @@
       </plugin>
       <plugin>
         <artifactId>maven-remote-resources-plugin</artifactId>
-        <version>1.0</version>
         <executions>
           <execution>
             <goals>
@@ -276,6 +275,14 @@
         <groupId>org.terracotta.plugin</groupId>
         <artifactId>maven-depdb-plugin</artifactId>
         <version>${depdb.version}</version>
+      </plugin>
+      <plugin>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <configuration>
+          <tasks>
+            <echo message="PROJECT_VERSION:${project.version}" />
+          </tasks>
+        </configuration>
       </plugin>
     </plugins>
   </build>
@@ -310,9 +317,10 @@
        the mvn deploy command. -->
   <distributionManagement>
     <repository>
-      <id />
-      <name />
-      <url />
+      <id>kong</id>
+      <name>TC internal repo</name>
+      <url>file:/shares/maven2</url>
+	  <uniqueVersion>false</uniqueVersion>
     </repository>
   </distributionManagement>
 </project>
