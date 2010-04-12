@@ -87,6 +87,11 @@
     <profile>
       <id>release</id>
       <distributionManagement>
+        <repository>
+          <id>terracotta-releases</id>
+          <name>Terracotta Releases Repository</name>
+          <url>${terracotta-releases-url}</url>
+        </repository>
         <site>
           <id>forge-site</id>
           <name>Project Sites Server</name>
