@@ -31,9 +31,9 @@
   <properties>
     <forgeTags>Parent POM</forgeTags>
     <depdb.version>1.0.0</depdb.version>
-    <terracotta-snapshots-url>http://nexus.terracotta.lan/content/repositories/terracotta-snapshots</terracotta-snapshots-url>
-    <terracotta-staging-url>http://nexus.terracotta.lan/content/repositories/terracotta-staging</terracotta-staging-url>
-    <terracotta-releases-url>http://nexus.terracotta.lan/content/repositories/terracotta-releases</terracotta-releases-url>
+    <terracotta-snapshots-url>http://nexus.terracotta.lan:8080/content/repositories/terracotta-snapshots</terracotta-snapshots-url>
+    <terracotta-staging-url>http://nexus.terracotta.lan:8080/content/repositories/terracotta-staging</terracotta-staging-url>
+    <terracotta-releases-url>http://nexus.terracotta.lan:8080/content/repositories/terracotta-releases</terracotta-releases-url>
   </properties>
 
   <distributionManagement>
