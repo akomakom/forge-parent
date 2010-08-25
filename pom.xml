@@ -8,7 +8,7 @@
 
   <groupId>org.terracotta.forge</groupId>
   <artifactId>forge-parent</artifactId>
-  <version>2.0.1-SNAPSHOT</version>
+  <version>2.0</version>
   <packaging>pom</packaging>
 
   <name>forge-parent</name>
@@ -190,26 +190,22 @@
             </execution>
           </executions>
         </plugin>
-        <!--
-           
-        if ff descriptorRefs are defined and the child project also happens to have a descriptors section
-        that configure source and binary packaging, then the child project must disable the descriptorRefs
-        defined in this POM, by specifying <descriptorRefs /> in the configuration section of the child
-        project's maven-assembly-plugin configuration section.
-        
         <plugin>
-           <groupId>org.apache.maven.plugins</groupId>
-           <artifactId>maven-assembly-plugin</artifactId>
-           <configuration>
-              <descriptorRefs>
-                 <descriptorRef>src</descriptorRef>
-                 <descriptorRef>bin</descriptorRef>
-              </descriptorRefs>
-              <outputDirectory>${project.build.directory}/site/downloads</outputDirectory>
-           </configuration>
-        </plugin>
-        
-        -->
+          <artifactId>maven-remote-resources-plugin</artifactId>
+          <version>1.1</version>
+          <executions>
+            <execution>
+              <goals>
+                <goal>process</goal>
+              </goals>
+              <configuration>
+                <resourceBundles>
+                  <resourceBundle>org.terracotta:license-resource-bundle:1.0.0</resourceBundle>
+                </resourceBundles>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>        
       </plugins>
     </pluginManagement>
     
@@ -229,18 +225,6 @@
       </plugin>
       <plugin>
         <artifactId>maven-remote-resources-plugin</artifactId>
-        <executions>
-          <execution>
-            <goals>
-              <goal>process</goal>
-            </goals>
-            <configuration>
-              <resourceBundles>
-                <resourceBundle>org.terracotta:license-resource-bundle:1.0.0</resourceBundle>
-              </resourceBundles>
-            </configuration>
-          </execution>
-        </executions>
       </plugin>
       <plugin>
         <groupId>org.terracotta.plugin</groupId>
