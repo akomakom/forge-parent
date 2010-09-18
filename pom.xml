@@ -22,6 +22,10 @@
     </license>
   </licenses>
 
+  <modules>
+	<module>forge-parent-ee</module>
+  </modules>
+  
   <scm>
     <connection>scm:git:git@github.com:Terracotta-OSS/forge-parent.git</connection>
     <developerConnection>scm:git:https://github.com/Terracotta-OSS/forge-parent.git</developerConnection>

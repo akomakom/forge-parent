@@ -1,0 +1,57 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+  <organization>
+    <name>Terracotta, Inc.</name>
+    <url>http://www.terracotta.org/</url>
+  </organization>
+  
+  <parent>
+	<groupId>org.terracotta.forge</groupId>
+    <artifactId>forge-parent</artifactId>
+    <version>2.0</version>
+  </parent>
+
+  <groupId>org.terracotta.forge</groupId>
+  <artifactId>forge-parent-ee</artifactId>
+  <version>2.0</version>
+  <packaging>pom</packaging>
+
+  <name>forge-parent-ee</name>
+  <description>Parent POM for Terracotta Enterprise projects</description>
+  <url>http://forge.terracotta.org/</url>
+
+  <properties>
+    <terracotta-ee-snapshots-url>http://nexus.terracotta.lan:8080/content/repositories/terracotta-ee-snapshots</terracotta-ee-snapshots-url>
+    <terracotta-staging-url>http://nexus.terracotta.lan:8080/content/repositories/terracotta-staging</terracotta-staging-url>
+    <terracotta-ee-releases-url>http://nexus.terracotta.lan:8080/content/repositories/terracotta-ee-releases</terracotta-ee-releases-url>
+  </properties>
+
+  <distributionManagement>
+    <repository>
+      <id>terracotta-staging</id>
+      <name>Terracotta Staging Repository</name>
+      <url>${terracotta-staging-url}</url>
+    </repository>
+    <snapshotRepository>
+      <id>terracotta-ee-snapshots</id>
+       <uniqueVersion>false</uniqueVersion>
+       <name>Terracotta Snapshots Repository</name>
+       <url>${terracotta-ee-snapshots-url}</url>
+    </snapshotRepository>
+  </distributionManagement>
+
+  <profiles>
+    <profile>
+      <id>release</id>
+      <distributionManagement>
+        <repository>
+          <id>terracotta-ee-releases</id>
+          <name>Terracotta Releases Repository</name>
+          <url>${terracotta-ee-releases-url}</url>
+        </repository>
+      </distributionManagement>
+    </profile>
+  </profiles>
+  
+</project>
