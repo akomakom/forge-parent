@@ -34,7 +34,7 @@
 
   <properties>
     <forgeTags>Parent POM</forgeTags>
-    <depdb.version>1.0.0</depdb.version>
+    <depdb.version>1.0.1</depdb.version>
     <maven.build.timestamp.format>yyyyMMdd-HHmmss</maven.build.timestamp.format>
     <build.timestamp>${maven.build.timestamp}</build.timestamp>
     <terracotta-snapshots-url>http://nexus.terracotta.lan:8080/content/repositories/terracotta-snapshots</terracotta-snapshots-url>
