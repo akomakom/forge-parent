@@ -23,9 +23,9 @@
   </licenses>
 
   <modules>
-	<module>forge-parent-ee</module>
+  <module>forge-parent-ee</module>
   </modules>
-  
+
   <scm>
     <connection>scm:git:git@github.com:Terracotta-OSS/forge-parent.git</connection>
     <developerConnection>scm:git:https://github.com/Terracotta-OSS/forge-parent.git</developerConnection>
@@ -55,7 +55,7 @@
        <url>${terracotta-snapshots-url}</url>
     </snapshotRepository>
   </distributionManagement>
-  
+
   <profiles>
     <profile>
       <id>tc-publish</id>
@@ -78,7 +78,7 @@
         </plugins>
       </build>
     </profile>
-    
+
     <profile>
       <id>snapshot</id>
       <distributionManagement>
@@ -178,7 +178,7 @@
         <version>1.0-beta-2</version>
       </extension>
     </extensions>
-    
+
     <pluginManagement>
       <plugins>
         <plugin>
@@ -210,10 +210,10 @@
               </configuration>
             </execution>
           </executions>
-        </plugin>        
+        </plugin>
       </plugins>
     </pluginManagement>
-    
+
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
