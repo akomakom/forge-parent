@@ -214,6 +214,9 @@
     </pluginManagement>
 
     <plugins>
+      <plugin>
+        <artifactId>maven-source-plugin</artifactId>
+      </plugin>
 	  <plugin>
          <groupId>org.apache.maven.plugins</groupId>
          <artifactId>maven-project-info-reports-plugin</artifactId>
