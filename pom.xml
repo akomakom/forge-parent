@@ -41,6 +41,7 @@
     <terracotta-snapshots-url>http://nexus.terracotta.lan:8080/content/repositories/terracotta-snapshots</terracotta-snapshots-url>
     <terracotta-staging-url>http://nexus.terracotta.lan:8080/content/repositories/terracotta-staging</terracotta-staging-url>
     <terracotta-releases-url>http://nexus.terracotta.lan:8080/content/repositories/terracotta-releases</terracotta-releases-url>
+    <terracotta-patches-url>http://nexus.terracotta.lan:8080/content/repositories/terracotta-patches</terracotta-patches-url>
   </properties>
 
   <distributionManagement>
@@ -104,6 +105,17 @@
           <name>Project Sites Server</name>
           <url>${tc.distributionManagement.site.url}</url>
         </site>
+      </distributionManagement>
+    </profile>
+
+    <profile>
+      <id>patch</id>
+      <distributionManagement>
+        <repository>
+          <id>terracotta-patches</id>
+          <name>Terracotta Patches Repository</name>
+          <url>${terracotta-patches-url}</url>
+        </repository>
       </distributionManagement>
     </profile>
   </profiles>
