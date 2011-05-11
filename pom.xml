@@ -193,6 +193,11 @@
 
     <pluginManagement>
       <plugins>
+	    <plugin>
+		  <groupId>org.terracotta</groupId>
+		  <artifactId>maven-forge-plugin</artifactId>
+		  <version>1.0.2</version>
+		</plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-source-plugin</artifactId>
