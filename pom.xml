@@ -30,6 +30,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <forgeTags>Parent POM</forgeTags>
     <depdb.version>1.0.1</depdb.version>
+    <maven-forge-plugin.version>1.0.2</maven-forge-plugin.version>
     <maven.build.timestamp.format>yyyyMMdd-HHmmss</maven.build.timestamp.format>
     <build.timestamp>${maven.build.timestamp}</build.timestamp>
     <terracotta-snapshots-url>http://nexus.terracotta.lan:8080/content/repositories/terracotta-snapshots</terracotta-snapshots-url>
@@ -190,7 +191,7 @@
 	    <plugin>
 		  <groupId>org.terracotta</groupId>
 		  <artifactId>maven-forge-plugin</artifactId>
-		  <version>1.0.2</version>
+		  <version>${maven-forge-plugin.version}</version>
 		</plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
