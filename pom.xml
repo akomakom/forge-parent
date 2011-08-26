@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
   <organization>
@@ -23,7 +24,7 @@
   </licenses>
 
   <modules>
-  <module>forge-parent-ee</module>
+    <module>forge-parent-ee</module>
   </modules>
 
   <properties>
@@ -47,9 +48,9 @@
     </repository>
     <snapshotRepository>
       <id>terracotta-snapshots</id>
-       <uniqueVersion>false</uniqueVersion>
-       <name>Terracotta Snapshots Repository</name>
-       <url>${terracotta-snapshots-url}</url>
+      <uniqueVersion>false</uniqueVersion>
+      <name>Terracotta Snapshots Repository</name>
+      <url>${terracotta-snapshots-url}</url>
     </snapshotRepository>
   </distributionManagement>
 
@@ -152,30 +153,12 @@
       <unsubscribe>tc-forge-announce-unsubscribe@lists.terracotta.org</unsubscribe>
     </mailingList>
   </mailingLists>
-<!--
-  <reporting>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-project-info-reports-plugin</artifactId>
-        <version>2.2</version>
-        <reportSets>
-          <reportSet>
-            <reports>
-              <report>index</report>
-              <report>dependencies</report>
-              <report>issue-tracking</report>
-              <report>mailing-list</report>
-              <report>scm</report>
-              <report>license</report>
-              <report>project-team</report>
-            </reports>
-          </reportSet>
-        </reportSets>
-      </plugin>
-    </plugins>
-  </reporting>
--->
+  <!-- <reporting> <plugins> <plugin> <groupId>org.apache.maven.plugins</groupId> 
+    <artifactId>maven-project-info-reports-plugin</artifactId> <version>2.2</version> 
+    <reportSets> <reportSet> <reports> <report>index</report> <report>dependencies</report> 
+    <report>issue-tracking</report> <report>mailing-list</report> <report>scm</report> 
+    <report>license</report> <report>project-team</report> </reports> </reportSet> 
+    </reportSets> </plugin> </plugins> </reporting> -->
   <build>
 
     <extensions>
@@ -188,11 +171,11 @@
 
     <pluginManagement>
       <plugins>
-	    <plugin>
-		  <groupId>org.terracotta</groupId>
-		  <artifactId>maven-forge-plugin</artifactId>
-		  <version>${maven-forge-plugin.version}</version>
-		</plugin>
+        <plugin>
+          <groupId>org.terracotta</groupId>
+          <artifactId>maven-forge-plugin</artifactId>
+          <version>${maven-forge-plugin.version}</version>
+        </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-source-plugin</artifactId>
@@ -208,6 +191,7 @@
           </executions>
         </plugin>
         <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-remote-resources-plugin</artifactId>
           <version>1.1</version>
           <executions>
@@ -223,25 +207,25 @@
             </execution>
           </executions>
         </plugin>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>findbugs-maven-plugin</artifactId>
-        <version>2.3.2</version>
-        <configuration>
-          <findbugsXmlOutput>true</findbugsXmlOutput>
-          <findbugsXmlWithMessages>true</findbugsXmlWithMessages>
-          <xmlOutput>true</xmlOutput>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-pmd-plugin</artifactId>
-        <version>2.5</version>
-        <configuration>
-          <aggregate>true</aggregate>
-          <targetJdk>1.5</targetJdk>
-        </configuration>
-      </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>findbugs-maven-plugin</artifactId>
+          <version>2.3.2</version>
+          <configuration>
+            <findbugsXmlOutput>true</findbugsXmlOutput>
+            <findbugsXmlWithMessages>true</findbugsXmlWithMessages>
+            <xmlOutput>true</xmlOutput>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-pmd-plugin</artifactId>
+          <version>2.5</version>
+          <configuration>
+            <aggregate>true</aggregate>
+            <targetJdk>1.5</targetJdk>
+          </configuration>
+        </plugin>
       </plugins>
     </pluginManagement>
 
@@ -249,24 +233,24 @@
       <plugin>
         <artifactId>maven-source-plugin</artifactId>
       </plugin>
-    <plugin>
-         <groupId>org.apache.maven.plugins</groupId>
-         <artifactId>maven-project-info-reports-plugin</artifactId>
-     <version>2.2</version>
-     <configuration>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-project-info-reports-plugin</artifactId>
+        <version>2.2</version>
+        <configuration>
           <reportSets>
-         <reportSet>
-           <reports>
-           <report>index</report>
-           <report>issue-tracking</report>
-           <report>mailing-list</report>
-           <report>scm</report>
-           <report>license</report>
-           <report>project-team</report>
-         </reports>
-       </reportSet>
-      </reportSets>
-    </configuration>
+            <reportSet>
+              <reports>
+                <report>index</report>
+                <report>issue-tracking</report>
+                <report>mailing-list</report>
+                <report>scm</report>
+                <report>license</report>
+                <report>project-team</report>
+              </reports>
+            </reportSet>
+          </reportSets>
+        </configuration>
       </plugin>
 
       <plugin>
@@ -278,8 +262,9 @@
         <version>${depdb.version}</version>
       </plugin>
       <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-antrun-plugin</artifactId>
-        <version>1.5</version>
+        <version>1.6</version><!--$NO-MVN-MAN-VER$ -->
         <configuration>
           <tasks>
             <echo message="PROJECT_VERSION:${project.version}" />
@@ -298,14 +283,14 @@
         </configuration>
       </plugin>
       <plugin>
-      <groupId>org.apache.maven.plugins</groupId>
-      <artifactId>maven-compiler-plugin</artifactId>
-      <version>2.3.2</version>
-      <configuration>
-        <source>1.5</source>
-        <target>1.5</target>
-      </configuration>
-    </plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>2.3.2</version>
+        <configuration>
+          <source>1.5</source>
+          <target>1.5</target>
+        </configuration>
+      </plugin>
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>findbugs-maven-plugin</artifactId>
@@ -313,12 +298,12 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-pmd-plugin</artifactId>
-        <version>2.5</version>
+        <version>2.5</version><!--$NO-MVN-MAN-VER$ -->
       </plugin>
       <plugin>
-	    <groupId>org.terracotta</groupId>
-		<artifactId>maven-forge-plugin</artifactId>
-	  </plugin>
+        <groupId>org.terracotta</groupId>
+        <artifactId>maven-forge-plugin</artifactId>
+      </plugin>
     </plugins>
   </build>
 
@@ -326,16 +311,24 @@
     <repository>
       <id>terracotta-releases</id>
       <url>http://www.terracotta.org/download/reflector/releases</url>
-      <releases><enabled>true</enabled></releases>
-      <snapshots><enabled>false</enabled></snapshots>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
     </repository>
   </repositories>
   <pluginRepositories>
     <pluginRepository>
       <id>terracotta-releases</id>
       <url>http://www.terracotta.org/download/reflector/releases</url>
-      <releases><enabled>true</enabled></releases>
-      <snapshots><enabled>false</enabled></snapshots>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
     </pluginRepository>
   </pluginRepositories>
 </project>
