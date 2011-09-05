@@ -56,28 +56,6 @@
 
   <profiles>
     <profile>
-      <id>tc-publish</id>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.terracotta.plugin</groupId>
-            <artifactId>maven-depdb-plugin</artifactId>
-            <version>${depdb.version}</version>
-            <executions>
-              <execution>
-                <id>generate-meta-data</id>
-                <phase>deploy</phase>
-                <goals>
-                  <goal>generate</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-
-    <profile>
       <id>snapshot</id>
       <distributionManagement>
         <site>
