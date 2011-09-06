@@ -32,6 +32,7 @@
     <maven-forge-plugin.version>1.0.3-SNAPSHOT</maven-forge-plugin.version>
     <maven.build.timestamp.format>yyyyMMdd-HHmmss</maven.build.timestamp.format>
     <build.timestamp>${maven.build.timestamp}</build.timestamp>
+	<skip.findbugs>false</skip.findbugs>
     <terracotta-snapshots-url>http://nexus.terracotta.lan:8080/content/repositories/terracotta-snapshots</terracotta-snapshots-url>
     <terracotta-staging-url>http://nexus.terracotta.lan:8080/content/repositories/terracotta-staging</terracotta-staging-url>
     <terracotta-releases-url>http://nexus.terracotta.lan:8080/content/repositories/terracotta-releases</terracotta-releases-url>
@@ -185,6 +186,7 @@
             <findbugsXmlOutput>true</findbugsXmlOutput>
             <findbugsXmlWithMessages>true</findbugsXmlWithMessages>
             <xmlOutput>true</xmlOutput>
+			<skip>${skip.findbugs}</skip>
           </configuration>
         </plugin>
         <plugin>
