@@ -12,7 +12,6 @@
     <version>2.3-SNAPSHOT</version>
   </parent>
 
-  <groupId>org.terracotta.forge</groupId>
   <artifactId>forge-parent-ee</artifactId>
   <packaging>pom</packaging>
 
