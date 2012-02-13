@@ -20,15 +20,18 @@
   </modules>
 
   <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven-forge-plugin.version>1.0.5-SNAPSHOT</maven-forge-plugin.version>
-    <terracotta-checkstyle.version>1.0-SNAPSHOT</terracotta-checkstyle.version>
+    
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.build.timestamp.format>yyyyMMdd-HHmmss</maven.build.timestamp.format>
     <build.timestamp>${maven.build.timestamp}</build.timestamp>
     <skipFindbugs>false</skipFindbugs>
     <skipCheckstyle>false</skipCheckstyle>
     <skipDeploy>false</skipDeploy>
     
+    <checkstyle-groupId>org.terracotta.checkstyle</checkstyle-groupId>
+    <checkstyle-artifactId>terracotta-checkstyle</checkstyle-artifactId>
+    <checkstyle-version>1.0-SNAPSHOT</checkstyle-version>
     <checkstyle-suppressions-file>${basedir}/../checkstyle/suppressions.xml</checkstyle-suppressions-file>
     <checkstyle-config-file>terracotta/checkstyle.xml</checkstyle-config-file>
     <checkstyle-header-file>terracotta/header.txt</checkstyle-header-file>
@@ -142,9 +145,9 @@
           <version>2.8</version>
           <dependencies>
             <dependency>
-              <groupId>org.terracotta.checkstyle</groupId>
-              <artifactId>terracotta-checkstyle</artifactId>
-              <version>${terracotta-checkstyle.version}</version>
+              <groupId>${checkstyle-groupId}</groupId>
+              <artifactId>${checkstyle-artifactId}</artifactId>
+              <version>${checkstyle-version}</version>
             </dependency>
           </dependencies>
           <configuration>
