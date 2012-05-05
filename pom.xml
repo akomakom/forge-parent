@@ -207,6 +207,32 @@
                 </pluginExecution>
                 <pluginExecution>
                   <pluginExecutionFilter>
+                    <groupId>org.terracotta</groupId>
+                    <artifactId>maven-forge-plugin</artifactId>
+                    <versionRange>[1.0.0-SNAPSHOT,)</versionRange>
+                    <goals>
+                      <goal>manifest</goal>
+                    </goals>
+                  </pluginExecutionFilter>
+                  <action>
+                    <ignore></ignore>
+                  </action>
+                </pluginExecution>
+                <pluginExecution>
+                  <pluginExecutionFilter>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-checkstyle-plugin</artifactId>
+                    <versionRange>[2.8,)</versionRange>
+                    <goals>
+                      <goal>checkstyle</goal>
+                    </goals>
+                  </pluginExecutionFilter>
+                  <action>
+                    <ignore></ignore>
+                  </action>
+                </pluginExecution>
+                <pluginExecution>
+                  <pluginExecutionFilter>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>exec-maven-plugin</artifactId>
                     <versionRange>[1.2,)</versionRange>
