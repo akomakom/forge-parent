@@ -9,7 +9,7 @@
 
   <groupId>org.terracotta.forge</groupId>
   <artifactId>forge-parent</artifactId>
-  <version>2.3</version>
+  <version>2.4</version>
   <packaging>pom</packaging>
 
   <name>forge-parent</name>
@@ -29,10 +29,10 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven-forge-plugin.version>1.0.3</maven-forge-plugin.version>
+    <maven-forge-plugin.version>1.0.4</maven-forge-plugin.version>
     <maven.build.timestamp.format>yyyyMMdd-HHmmss</maven.build.timestamp.format>
     <build.timestamp>${maven.build.timestamp}</build.timestamp>
-	<skip.findbugs>false</skip.findbugs>
+	  <skip.findbugs>false</skip.findbugs>
     <terracotta-snapshots-url>http://nexus.terracotta.lan:8080/content/repositories/terracotta-snapshots</terracotta-snapshots-url>
     <terracotta-staging-url>http://nexus.terracotta.lan:8080/content/repositories/terracotta-staging</terracotta-staging-url>
     <terracotta-releases-url>http://nexus.terracotta.lan:8080/content/repositories/terracotta-releases</terracotta-releases-url>
@@ -333,8 +333,8 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>2.3.2</version>
         <configuration>
-          <source>1.5</source>
-          <target>1.5</target>
+          <source>1.6</source>
+          <target>1.6</target>
           <fork>true</fork>
           <meminitial>128m</meminitial>
           <maxmem>512m</maxmem>          
