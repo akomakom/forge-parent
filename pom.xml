@@ -212,6 +212,7 @@
                     <versionRange>[1.0.0-SNAPSHOT,)</versionRange>
                     <goals>
                       <goal>manifest</goal>
+                      <goal>setl2classpath</goal>
                     </goals>
                   </pluginExecutionFilter>
                   <action>
