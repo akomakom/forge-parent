@@ -133,7 +133,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-pmd-plugin</artifactId>
-          <version>2.6</version>
+          <version>2.7.1</version>
           <configuration>
             <aggregate>true</aggregate>
             <targetJdk>1.6</targetJdk>
