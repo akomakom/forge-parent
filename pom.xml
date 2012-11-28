@@ -21,21 +21,21 @@
 
   <properties>
     <maven-forge-plugin.version>1.0.6-SNAPSHOT</maven-forge-plugin.version>
-    
+
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.build.timestamp.format>yyyyMMdd-HHmmss</maven.build.timestamp.format>
     <build.timestamp>${maven.build.timestamp}</build.timestamp>
     <skipFindbugs>false</skipFindbugs>
     <skipCheckstyle>false</skipCheckstyle>
     <skipDeploy>false</skipDeploy>
-    
+
     <checkstyle-groupId>org.terracotta.checkstyle</checkstyle-groupId>
     <checkstyle-artifactId>terracotta-checkstyle</checkstyle-artifactId>
     <checkstyle-version>1.0-SNAPSHOT</checkstyle-version>
     <checkstyle-suppressions-file>${basedir}/../checkstyle/suppressions.xml</checkstyle-suppressions-file>
     <checkstyle-config-file>checkstyle.xml</checkstyle-config-file>
     <checkstyle-header-file>header.txt</checkstyle-header-file>
-    
+
     <terracotta-snapshots-url>http://nexus.terracotta.lan:8080/content/repositories/terracotta-snapshots</terracotta-snapshots-url>
     <terracotta-staging-url>http://nexus.terracotta.lan:8080/content/repositories/terracotta-staging</terracotta-staging-url>
     <terracotta-releases-url>http://nexus.terracotta.lan:8080/content/repositories/terracotta-releases</terracotta-releases-url>
@@ -87,6 +87,19 @@
           <groupId>org.terracotta</groupId>
           <artifactId>maven-forge-plugin</artifactId>
           <version>${maven-forge-plugin.version}</version>
+          <executions>
+            <execution>
+              <id>generateBuildInfoFile</id>
+              <configuration>
+                <generateBuildInfoFile>true</generateBuildInfoFile>
+                <buildInfoLocation>${project.build.outputDirectory}</buildInfoLocation>
+              </configuration>
+              <phase>generate-resources</phase>
+              <goals>
+                <goal>buildinfo</goal>
+              </goals>
+            </execution>
+          </executions>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -130,11 +143,11 @@
           <artifactId>maven-checkstyle-plugin</artifactId>
           <version>2.9.1</version>
           <dependencies>
-	    <dependency>
-	      <groupId>com.puppycrawl.tools</groupId>
-	      <artifactId>checkstyle</artifactId>
-	      <version>5.6</version>
-	    </dependency>
+            <dependency>
+              <groupId>com.puppycrawl.tools</groupId>
+              <artifactId>checkstyle</artifactId>
+              <version>5.6</version>
+            </dependency>
             <dependency>
               <groupId>${checkstyle-groupId}</groupId>
               <artifactId>${checkstyle-artifactId}</artifactId>
