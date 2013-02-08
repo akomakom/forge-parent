@@ -9,7 +9,7 @@
 
   <groupId>org.terracotta.forge</groupId>
   <artifactId>forge-parent</artifactId>
-  <version>3.0-SNAPSHOT</version>
+  <version>3.0</version>
   <packaging>pom</packaging>
 
   <name>forge-parent</name>
@@ -20,7 +20,7 @@
   </modules>
 
   <properties>
-    <maven-forge-plugin.version>1.0.6-SNAPSHOT</maven-forge-plugin.version>
+    <maven-forge-plugin.version>1.0.6</maven-forge-plugin.version>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.build.timestamp.format>yyyyMMdd-HHmmss</maven.build.timestamp.format>
@@ -31,7 +31,7 @@
 
     <checkstyle-groupId>org.terracotta.checkstyle</checkstyle-groupId>
     <checkstyle-artifactId>terracotta-checkstyle</checkstyle-artifactId>
-    <checkstyle-version>1.0-SNAPSHOT</checkstyle-version>
+    <checkstyle-version>1.0</checkstyle-version>
     <checkstyle-suppressions-file>${basedir}/../checkstyle/suppressions.xml</checkstyle-suppressions-file>
     <checkstyle-config-file>checkstyle.xml</checkstyle-config-file>
     <checkstyle-header-file>header.txt</checkstyle-header-file>
