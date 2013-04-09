@@ -199,6 +199,7 @@
                     <goals>
                       <goal>manifest</goal>
                       <goal>setl2classpath</goal>
+                      <goal>sag-finder</goal>
                     </goals>
                   </pluginExecutionFilter>
                   <action>
