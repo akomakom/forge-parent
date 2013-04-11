@@ -341,6 +341,7 @@
               <goal>sag-finder</goal>
             </goals>
             <configuration>
+              <skip>${skipSagFinder}</skip>
               <onlyRunWhenSagDepsIsTrue>true</onlyRunWhenSagDepsIsTrue>
               <excludeGroupIds>gf-3122</excludeGroupIds>
               <excludeArtifactIds>jackson-xc</excludeArtifactIds>
