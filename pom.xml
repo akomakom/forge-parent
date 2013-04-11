@@ -28,6 +28,7 @@
     <skipFindbugs>false</skipFindbugs>
     <skipCheckstyle>false</skipCheckstyle>
     <skipDeploy>false</skipDeploy>
+    <skipSagFinder>false</skipSagFinder>
 
     <checkstyle-groupId>org.terracotta.checkstyle</checkstyle-groupId>
     <checkstyle-artifactId>terracotta-checkstyle</checkstyle-artifactId>
