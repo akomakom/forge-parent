@@ -20,7 +20,7 @@
   </modules>
 
   <properties>
-    <maven-forge-plugin.version>1.0.8-SNAPSHOT</maven-forge-plugin.version>
+    <maven-forge-plugin.version>1.0.8</maven-forge-plugin.version>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.build.timestamp.format>yyyyMMdd-HHmmss</maven.build.timestamp.format>
