@@ -21,6 +21,7 @@
 
   <properties>
     <maven-forge-plugin.version>1.0.9</maven-forge-plugin.version>
+    <shiro.version>1.2.1</shiro.version>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.build.timestamp.format>yyyyMMdd-HHmmss</maven.build.timestamp.format>
