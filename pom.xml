@@ -9,7 +9,7 @@
 
   <groupId>org.terracotta.forge</groupId>
   <artifactId>forge-parent</artifactId>
-  <version>3.4-SNAPSHOT</version>
+  <version>3.4</version>
   <packaging>pom</packaging>
 
   <name>forge-parent</name>
