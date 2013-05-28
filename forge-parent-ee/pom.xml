@@ -26,6 +26,20 @@
     <terracotta-ee-releases-url>http://nexus.terracotta.lan:8080/content/repositories/terracotta-ee-releases</terracotta-ee-releases-url>
   </properties>
 
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.sonatype.plugins</groupId>
+          <artifactId>nexus-staging-maven-plugin</artifactId>
+          <configuration>
+            <stagingProfileId>${stagingProfile.public}</stagingProfileId>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+
   <distributionManagement>
     <repository>
       <id>terracotta-staging</id>
