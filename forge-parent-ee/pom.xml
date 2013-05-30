@@ -33,7 +33,7 @@
           <groupId>org.sonatype.plugins</groupId>
           <artifactId>nexus-staging-maven-plugin</artifactId>
           <configuration>
-            <stagingProfileId>${stagingProfile.public}</stagingProfileId>
+            <stagingProfileId>${stagingProfile.private}</stagingProfileId>
           </configuration>
         </plugin>
       </plugins>
@@ -41,11 +41,7 @@
   </build>
 
   <distributionManagement>
-    <repository>
-      <id>terracotta-staging</id>
-      <name>Terracotta Staging Repository</name>
-      <url>${terracotta-staging-url}</url>
-    </repository>
+    <!-- Releases are deployed using the nexus-staging-maven-plugin, so release repository is not configured here. -->
     <snapshotRepository>
       <id>terracotta-ee-snapshots</id>
        <uniqueVersion>false</uniqueVersion>
@@ -55,16 +51,6 @@
   </distributionManagement>
 
   <profiles>
-    <profile>
-      <id>release</id>
-      <distributionManagement>
-        <repository>
-          <id>terracotta-ee-releases</id>
-          <name>Terracotta Releases Repository</name>
-          <url>${terracotta-ee-releases-url}</url>
-        </repository>
-      </distributionManagement>
-    </profile>
   </profiles>
 
 </project>

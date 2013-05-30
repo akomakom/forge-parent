@@ -36,21 +36,22 @@
     <checkstyle-config-file>checkstyle.xml</checkstyle-config-file>
     <checkstyle-header-file>header.txt</checkstyle-header-file>
 
+    <terracotta-os-snapshots-url>http://nexus.terracotta.lan:8080/content/repositories/terracotta-os-snapshots</terracotta-os-snapshots-url>
     <terracotta-snapshots-url>http://nexus.terracotta.lan:8080/content/repositories/terracotta-snapshots</terracotta-snapshots-url>
+    <terracotta-ee-snapshots-url>http://nexus.terracotta.lan:8080/content/repositories/terracotta-ee-snapshots</terracotta-ee-snapshots-url>
     <terracotta-staging-url>http://nexus.terracotta.lan:8080/content/repositories/terracotta-staging</terracotta-staging-url>
+    <terracotta-os-releases-url>http://nexus.terracotta.lan:8080/content/repositories/terracotta-os-releases</terracotta-os-releases-url>
     <terracotta-releases-url>http://nexus.terracotta.lan:8080/content/repositories/terracotta-releases</terracotta-releases-url>
+    <terracotta-ee-releases-url>http://nexus.terracotta.lan:8080/content/repositories/terracotta-ee-releases</terracotta-ee-releases-url>
     <terracotta-patches-url>http://nexus.terracotta.lan:8080/content/repositories/terracotta-patches</terracotta-patches-url>
+    <terracotta-staging-url>http://nexus.terracotta.lan:8080/content/repositories/terracotta-staging</terracotta-staging-url>
     <stagingProfile.openSource>6b2d2a23c465b</stagingProfile.openSource>
     <stagingProfile.public>6b2f08b6e4907</stagingProfile.public>
     <stagingProfile.private>6b2fc8d5c18d5</stagingProfile.private>
   </properties>
 
   <distributionManagement>
-    <repository>
-      <id>terracotta-staging</id>
-      <name>Terracotta Staging Repository</name>
-      <url>${terracotta-staging-url}</url>
-    </repository>
+    <!-- Releases are deployed using the nexus-staging-maven-plugin, so release repository is not configured here. -->
     <snapshotRepository>
       <id>terracotta-snapshots</id>
       <uniqueVersion>false</uniqueVersion>
@@ -60,16 +61,6 @@
   </distributionManagement>
 
   <profiles>
-    <profile>
-      <id>release</id>
-      <distributionManagement>
-        <repository>
-          <id>terracotta-releases</id>
-          <name>Terracotta Releases Repository</name>
-          <url>${terracotta-releases-url}</url>
-        </repository>
-      </distributionManagement>
-    </profile>
 
     <profile>
       <id>patch</id>
@@ -95,7 +86,8 @@
             <serverId>terracotta-staging</serverId>
             <nexusUrl>http://nexus.terracotta.lan:8080/</nexusUrl>
             <skipStagingRepositoryClose>true</skipStagingRepositoryClose>
-            <stagingProfileId>${stagingProfile.openSource}</stagingProfileId>
+            <stagingProfileId>${stagingProfile.public}</stagingProfileId>
+            <skipNexusStagingDeployMojo>${skipDeploy}</skipNexusStagingDeployMojo>
           </configuration>
         </plugin>
         <plugin>
