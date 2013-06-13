@@ -21,9 +21,6 @@
   <url>http://forge.terracotta.org/</url>
 
   <properties>
-    <terracotta-ee-snapshots-url>http://nexus.terracotta.lan:8080/content/repositories/terracotta-ee-snapshots</terracotta-ee-snapshots-url>
-    <terracotta-staging-url>http://nexus.terracotta.lan:8080/content/repositories/terracotta-staging</terracotta-staging-url>
-    <terracotta-ee-releases-url>http://nexus.terracotta.lan:8080/content/repositories/terracotta-ee-releases</terracotta-ee-releases-url>
   </properties>
 
   <build>
@@ -45,7 +42,7 @@
     <snapshotRepository>
       <id>terracotta-ee-snapshots</id>
        <uniqueVersion>false</uniqueVersion>
-       <name>Terracotta Snapshots Repository</name>
+       <name>Terracotta EE Snapshots Repository</name>
        <url>${terracotta-ee-snapshots-url}</url>
     </snapshotRepository>
   </distributionManagement>

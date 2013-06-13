@@ -53,9 +53,9 @@
   <distributionManagement>
     <!-- Releases are deployed using the nexus-staging-maven-plugin, so release repository is not configured here. -->
     <snapshotRepository>
-      <id>terracotta-snapshots</id>
+      <id>terracotta-os-snapshots</id>
       <uniqueVersion>false</uniqueVersion>
-      <name>Terracotta Snapshots Repository</name>
+      <name>Terracotta OS Snapshots Repository</name>
       <url>${terracotta-snapshots-url}</url>
     </snapshotRepository>
   </distributionManagement>
@@ -85,8 +85,7 @@
           <configuration>
             <serverId>terracotta-staging</serverId>
             <nexusUrl>http://nexus.terracotta.lan:8080/</nexusUrl>
-            <skipStagingRepositoryClose>true</skipStagingRepositoryClose>
-            <stagingProfileId>${stagingProfile.public}</stagingProfileId>
+            <stagingProfileId>${stagingProfile.openSource}</stagingProfileId>
             <skipNexusStagingDeployMojo>${skipDeploy}</skipNexusStagingDeployMojo>
           </configuration>
         </plugin>
