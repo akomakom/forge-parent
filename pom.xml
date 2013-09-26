@@ -50,12 +50,16 @@
   </properties>
 
   <distributionManagement>
-    <!-- Releases are deployed using the nexus-staging-maven-plugin, so release repository is not configured here. -->
+    <repository>
+      <id>terracotta-os-releases</id>
+      <name>Terracotta OS Releases Repository</name>
+      <url>${terracotta-os-releases-url}</url>
+    </repository>
     <snapshotRepository>
       <id>terracotta-os-snapshots</id>
       <uniqueVersion>false</uniqueVersion>
       <name>Terracotta OS Snapshots Repository</name>
-      <url>${terracotta-snapshots-url}</url>
+      <url>${terracotta-os-snapshots-url}</url>
     </snapshotRepository>
   </distributionManagement>
 
@@ -76,18 +80,6 @@
   <build>
     <pluginManagement>
       <plugins>
-        <plugin>
-          <groupId>org.sonatype.plugins</groupId>
-          <artifactId>nexus-staging-maven-plugin</artifactId>
-          <version>1.4.4</version>
-          <extensions>true</extensions>
-          <configuration>
-            <serverId>terracotta-staging</serverId>
-            <nexusUrl>http://nexus.terracotta.lan:8080/</nexusUrl>
-            <stagingProfileId>${stagingProfile.openSource}</stagingProfileId>
-            <skipNexusStagingDeployMojo>${skipDeploy}</skipNexusStagingDeployMojo>
-          </configuration>
-        </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-source-plugin</artifactId>
@@ -290,10 +282,6 @@
     </pluginManagement>
 
     <plugins>
-      <plugin>
-        <groupId>org.sonatype.plugins</groupId>
-        <artifactId>nexus-staging-maven-plugin</artifactId>
-      </plugin>
       <plugin>
         <artifactId>maven-source-plugin</artifactId>
       </plugin>

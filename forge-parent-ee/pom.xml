@@ -22,22 +22,12 @@
   <properties>
   </properties>
 
-  <build>
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <groupId>org.sonatype.plugins</groupId>
-          <artifactId>nexus-staging-maven-plugin</artifactId>
-          <configuration>
-            <stagingProfileId>${stagingProfile.private}</stagingProfileId>
-          </configuration>
-        </plugin>
-      </plugins>
-    </pluginManagement>
-  </build>
-
   <distributionManagement>
-    <!-- Releases are deployed using the nexus-staging-maven-plugin, so release repository is not configured here. -->
+    <repository>
+      <id>terracotta-ee-releases</id>
+      <name>Terracotta EE Releases Repository</name>
+      <url>${terracotta-ee-releases-url}</url>
+    </repository>
     <snapshotRepository>
       <id>terracotta-ee-snapshots</id>
        <uniqueVersion>false</uniqueVersion>
