@@ -8,7 +8,7 @@
 
   <groupId>org.terracotta.forge</groupId>
   <artifactId>forge-parent</artifactId>
-  <version>3.7</version>
+  <version>3.8-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>forge-parent</name>
@@ -47,10 +47,6 @@
     <stagingProfile.openSource>6b2d2a23c465b</stagingProfile.openSource>
     <stagingProfile.public>6b2f08b6e4907</stagingProfile.public>
     <stagingProfile.private>6b2fc8d5c18d5</stagingProfile.private>
-  
-    <metadata.build.jenkins.url>http://jenkinsmaster.terracotta.lan:9000/job/forge-parent_trunk_releaser/11/</metadata.build.jenkins.url>
-    <metadata.build.maven.active.profiles>terracotta-repositories,release,tc-publish</metadata.build.maven.active.profiles>
-    <metadata.svn.revision>41276</metadata.svn.revision>
   </properties>
 
   <distributionManagement>
