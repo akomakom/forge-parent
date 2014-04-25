@@ -299,7 +299,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>2.3.2</version>
+        <version>2.3.2</version><!-- we have a weird compiler problem in TC core common module which Jenkins doesn't show the error message if we upgrade this to version 3.1 -->
         <configuration>
           <source>1.6</source>
           <target>1.6</target>
