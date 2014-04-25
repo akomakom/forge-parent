@@ -19,7 +19,7 @@
   </modules>
 
   <properties>
-    <maven-forge-plugin.version>1.2.3</maven-forge-plugin.version>
+    <maven-forge-plugin.version>1.2.4</maven-forge-plugin.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.build.timestamp.format>yyyyMMdd-HHmmss</maven.build.timestamp.format>
     <build.timestamp>${maven.build.timestamp}</build.timestamp>
@@ -299,7 +299,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.1</version>
+        <version>2.3.2</version>
         <configuration>
           <source>1.6</source>
           <target>1.6</target>
