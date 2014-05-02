@@ -169,6 +169,16 @@
           <artifactId>maven-release-plugin</artifactId>
           <version>2.4.1</version>
         </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>2.3.2</version><!-- we have a weird compiler problem in TC core common module which Jenkins doesn't show the error message if we upgrade this to version 3.1 -->
+        </plugin>
+        <plugin>
+          <groupId>org.terracotta</groupId>
+          <artifactId>maven-forge-plugin</artifactId>
+          <version>${maven-forge-plugin.version}</version>
+        </plugin>
         <!--This plugin's configuration is used to store Eclipse m2e settings
           only. It has no influence on the Maven build itself. -->
         <plugin>
@@ -299,7 +309,6 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>2.3.2</version><!-- we have a weird compiler problem in TC core common module which Jenkins doesn't show the error message if we upgrade this to version 3.1 -->
         <configuration>
           <source>1.6</source>
           <target>1.6</target>
@@ -327,7 +336,6 @@
       <plugin>
         <groupId>org.terracotta</groupId>
         <artifactId>maven-forge-plugin</artifactId>
-        <version>${maven-forge-plugin.version}</version>
         <executions>
           <execution>
             <id>run-sag-finder</id>
