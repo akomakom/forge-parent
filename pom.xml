@@ -19,7 +19,7 @@
   </modules>
 
   <properties>
-    <maven-forge-plugin.version>1.2.4</maven-forge-plugin.version>
+    <maven-forge-plugin.version>1.2.5</maven-forge-plugin.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.build.timestamp.format>yyyyMMdd-HHmmss</maven.build.timestamp.format>
     <build.timestamp>${maven.build.timestamp}</build.timestamp>
