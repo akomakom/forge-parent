@@ -346,7 +346,7 @@
             <configuration>
               <skip>${skipSagFinder}</skip>
               <onlyRunWhenSagDepsIsTrue>true</onlyRunWhenSagDepsIsTrue>
-              <excludeGroupIds>gf-3122</excludeGroupIds>
+              <excludeGroupIds>gf-3122,gf-40</excludeGroupIds>
               <excludeArtifactIds>jackson-xc</excludeArtifactIds>
             </configuration>            
           </execution>
