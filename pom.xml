@@ -19,7 +19,7 @@
   </modules>
 
   <properties>
-    <maven-forge-plugin.version>1.2.9</maven-forge-plugin.version>
+    <maven-forge-plugin.version>1.2.10</maven-forge-plugin.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.build.timestamp.format>yyyyMMdd-HHmmss</maven.build.timestamp.format>
     <build.timestamp>${maven.build.timestamp}</build.timestamp>
@@ -350,7 +350,6 @@
               <excludeArtifacts>
                 <excludeArtifact>org.codehaus.jackson:jackson-xc</excludeArtifact>
                 <excludeArtifact>javax.validation:validation-api</excludeArtifact>
-                <excludeArtifact>org.eclipse.jetty.orbit:javax.servlet</excludeArtifact>
               </excludeArtifacts>
             </configuration>            
           </execution>
