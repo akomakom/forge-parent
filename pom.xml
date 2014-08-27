@@ -19,7 +19,8 @@
   </modules>
 
   <properties>
-    <maven-forge-plugin.version>1.2.10</maven-forge-plugin.version>
+    <maven-forge-plugin.version>1.2.11</maven-forge-plugin.version>
+    <finder.version>3.0</finder.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.build.timestamp.format>yyyyMMdd-HHmmss</maven.build.timestamp.format>
     <build.timestamp>${maven.build.timestamp}</build.timestamp>
@@ -336,6 +337,13 @@
       <plugin>
         <groupId>org.terracotta</groupId>
         <artifactId>maven-forge-plugin</artifactId>
+        <dependencies>
+           <dependency>
+             <groupId>com.softwareag.ibit.tools.util</groupId>
+             <artifactId>finder</artifactId>
+             <version>${finder.version}</version>
+           </dependency>
+        </dependencies>
         <executions>
           <execution>
             <id>run-sag-finder</id>
