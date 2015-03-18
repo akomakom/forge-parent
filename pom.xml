@@ -371,13 +371,8 @@
       <plugin>
         <groupId>org.terracotta</groupId>
         <artifactId>maven-forge-plugin</artifactId>
-        <dependencies>
-           <dependency>
-             <groupId>com.softwareag.ibit.tools.util</groupId>
-             <artifactId>finder</artifactId>
-             <version>${finder.version}</version>
-           </dependency>
-        </dependencies>
+
+
         <executions>
           <execution>
             <id>run-sag-finder</id>
@@ -399,6 +394,21 @@
       </plugin>       
     </plugins>
   </build>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.terracotta</groupId>
+        <artifactId>maven-forge-plugin</artifactId>
+        <version>${maven-forge-plugin.version}</version>
+        <exclusions>
+          <exclusion>
+              <groupId>com.softwareag.ibit.tools.util</groupId>
+              <artifactId>finder</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 
   <repositories>
     <repository>
