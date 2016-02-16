@@ -19,7 +19,11 @@
   </modules>
 
   <properties>
+    <!-- NOTE: to override these when using maven release plugin use this format:
+      -Darguments=-Djava.build.version=1.7 -->
     <java.build.version>1.6</java.build.version>
+    <!-- The vendor value to look for in toolchains.xml -->
+    <java.build.vendor>sun</java.build.vendor>
     <maven-forge-plugin.version>1.2.13</maven-forge-plugin.version>
     <finder.version>3.0</finder.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -330,6 +334,27 @@
           <fork>true</fork>
           <meminitial>128m</meminitial>
           <maxmem>512m</maxmem>
+        </configuration>
+      </plugin>
+      <!-- Ensure that we are compiling with the correct JDK even if we are running on a later version -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-toolchains-plugin</artifactId>
+        <version>1.1</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>toolchain</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <toolchains>
+            <jdk>
+              <version>${java.build.version}</version>
+              <vendor>${java.build.vendor}</vendor>
+            </jdk>
+          </toolchains>
         </configuration>
       </plugin>
       <plugin>
