@@ -25,6 +25,7 @@
     <!-- The vendor value to look for in toolchains.xml -->
     <java.build.vendor>sun</java.build.vendor>
     <maven-forge-plugin.version>1.2.13</maven-forge-plugin.version>
+    <maven-javadoc-plugin.version>2.9.1</maven-javadoc-plugin.version>
     <finder.version>3.0</finder.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.build.timestamp.format>yyyyMMdd-HHmmss</maven.build.timestamp.format>
@@ -306,6 +307,11 @@
               </pluginExecutions>
             </lifecycleMappingMetadata>
           </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-javadoc-plugin</artifactId>
+          <version>${maven-javadoc-plugin.version}</version>
         </plugin>
       </plugins>
     </pluginManagement>
