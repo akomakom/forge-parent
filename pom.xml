@@ -12,7 +12,7 @@
   <packaging>pom</packaging>
 
   <name>forge-parent</name>
-  <description>Parent POM for Terracotta projects</description>
+  <description>Parent POM for Terracotta projects.  The 3.x line is for JDK1.6 based projects.  4.x requires JDK1.8</description>
 
   <modules>
     <module>forge-parent-ee</module>
