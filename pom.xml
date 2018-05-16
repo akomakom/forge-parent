@@ -112,10 +112,11 @@
           <version>3.0.0</version>
         </plugin>
 
+        <!-- starting with 3.0.0, findbugs does not support JDK 1.6, so staying on 2.x.x-->
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>findbugs-maven-plugin</artifactId>
-          <version>3.0.3</version>
+          <version>2.5.5</version>
           <configuration>
             <findbugsXmlOutput>true</findbugsXmlOutput>
             <findbugsXmlWithMessages>true</findbugsXmlWithMessages>
