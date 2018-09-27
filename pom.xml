@@ -23,14 +23,14 @@
       -Darguments=-Djava.build.version=1.7 -->
     <java.build.version>1.8</java.build.version>
     <!-- The vendor value to look for in toolchains.xml -->
-    <java.build.vendor>Oracle Corporation</java.build.vendor>
+    <java.build.vendor>zulu</java.build.vendor>
     <maven-forge-plugin.version>1.2.20</maven-forge-plugin.version>
     <maven-javadoc-plugin.version>3.0.0</maven-javadoc-plugin.version>
     <finder.version>3.0</finder.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.build.timestamp.format>yyyyMMdd-HHmmss</maven.build.timestamp.format>
     <build.timestamp>${maven.build.timestamp}</build.timestamp>
-    <skipFindbugs>false</skipFindbugs>
+    <spotbugs.skip>false</spotbugs.skip>
     <skipCheckstyle>false</skipCheckstyle>
     <skipDeploy>false</skipDeploy>
     <skipSagFinder>false</skipSagFinder>
@@ -105,16 +105,16 @@
           </executions>
         </plugin>
         <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>findbugs-maven-plugin</artifactId>
-          <version>3.0.5</version>
+          <groupId>com.github.spotbugs</groupId>
+          <artifactId>spotbugs-maven-plugin</artifactId>
+          <version>3.1.7</version>
           <configuration>
-            <findbugsXmlOutput>true</findbugsXmlOutput>
-            <findbugsXmlWithMessages>true</findbugsXmlWithMessages>
+            <spotbugsXmlOutput>true</spotbugsXmlOutput>
             <xmlOutput>true</xmlOutput>
-            <skip>${skipFindbugs}</skip>
+            <skip>${spotbugs.skip}</skip>
           </configuration>
         </plugin>
+        <!--3.0.1 is the last version with JDK 1.6 support-->
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-pmd-plugin</artifactId>
