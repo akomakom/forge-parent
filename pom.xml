@@ -8,7 +8,7 @@
 
   <groupId>org.terracotta.forge</groupId>
   <artifactId>forge-parent</artifactId>
-  <version>4.6-SNAPSHOT</version>
+  <version>4.6</version>
   <packaging>pom</packaging>
 
   <name>forge-parent</name>
@@ -28,7 +28,7 @@
     <maven-javadoc-plugin.version>3.1.1</maven-javadoc-plugin.version>
     <surefire-plugin.version>3.0.0-M3</surefire-plugin.version>
     <failsafe-plugin.version>3.0.0-M3</failsafe-plugin.version>
-    <testVM></testVM>
+    <testVM/>
     <slf4j.version>1.7.25</slf4j.version>
     <logback.version>1.2.3</logback.version>
     <junit.version>4.12</junit.version>
@@ -72,6 +72,10 @@
     <stagingProfile.openSource>6b2d2a23c465b</stagingProfile.openSource>
     <stagingProfile.public>6b2f08b6e4907</stagingProfile.public>
     <stagingProfile.private>6b2fc8d5c18d5</stagingProfile.private>
+  
+    <metadata.build.jenkins.url>http://jenkins.terracotta.eur.ad.sag:8080/job/releasers/job/forge-parent_trunk_releaser/43/</metadata.build.jenkins.url>
+    <metadata.build.maven.active.profiles>terracotta-repositories,release,tc-publish,fullmode</metadata.build.maven.active.profiles>
+    <metadata.svn.revision>52902</metadata.svn.revision>
   </properties>
 
   <dependencies>
