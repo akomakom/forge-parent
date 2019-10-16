@@ -9,7 +9,7 @@
   <parent>
     <groupId>org.terracotta.forge</groupId>
     <artifactId>forge-parent</artifactId>
-    <version>4.7</version>
+    <version>4.8-SNAPSHOT</version>
   </parent>
 
   <artifactId>forge-parent-ee</artifactId>
@@ -20,10 +20,6 @@
   <url>http://forge.terracotta.org/</url>
 
   <properties>
-  
-    <metadata.build.jenkins.url>http://jenkins.terracotta.eur.ad.sag:8080/job/releasers/job/forge-parent_trunk_releaser/44/</metadata.build.jenkins.url>
-    <metadata.build.maven.active.profiles>terracotta-repositories,release,tc-publish,fullmode</metadata.build.maven.active.profiles>
-    <metadata.svn.revision>52924</metadata.svn.revision>
   </properties>
 
   <distributionManagement>
