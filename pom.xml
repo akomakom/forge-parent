@@ -225,7 +225,7 @@
           </configuration>
           <executions>
             <execution>
-              <id>create-javadoc</id>
+              <id>attach-javadocs</id>
               <phase>prepare-package</phase>
               <goals>
                 <goal>jar</goal>
