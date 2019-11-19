@@ -432,6 +432,15 @@
         <groupId>org.terracotta</groupId>
         <artifactId>maven-forge-plugin</artifactId>
 
+        <dependencies>                                                                                                                                                                  
+          <dependency>                                                                                                                                                                  
+            <groupId>com.softwareag.ibit.tools.util</groupId>                                                                                                                           
+            <artifactId>finder</artifactId>                                                                                                                                             
+            <!-- Before bumping version - verify it still accepts exclusion files -->                                                                                                   
+            <version>${finder.version}</version>                                                                                                                                                      
+            <scope>compile</scope>                                                                                                                                                      
+          </dependency>                                                                                                                                                                 
+        </dependencies>         
 
         <executions>
           <execution>
