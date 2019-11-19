@@ -26,6 +26,7 @@
     <java.build.vendor>zulu</java.build.vendor>
     <maven-forge-plugin.version>1.2.27</maven-forge-plugin.version>
     <maven-javadoc-plugin.version>3.1.1</maven-javadoc-plugin.version>
+    <finder.version>3.0</finder.version>
     <surefire-plugin.version>3.0.0-M3</surefire-plugin.version>
     <failsafe-plugin.version>3.0.0-M3</failsafe-plugin.version>
     <testVM/>
@@ -345,6 +346,17 @@
       <plugin>
         <groupId>org.terracotta</groupId>
         <artifactId>maven-forge-plugin</artifactId>
+
+        <dependencies>
+          <dependency>
+            <groupId>com.softwareag.ibit.tools.util</groupId>
+            <artifactId>finder</artifactId>
+            <!-- Before bumping version - verify it still accepts exclusion files -->
+            <version>${finder.version}</version>
+            <scope>compile</scope>
+          </dependency>
+        </dependencies>
+
         <executions>
           <execution>
             <id>run-sag-finder</id>
