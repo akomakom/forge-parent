@@ -24,12 +24,12 @@
     <java.build.version>1.8</java.build.version>
     <!-- The vendor value to look for in toolchains.xml -->
     <java.build.vendor>zulu</java.build.vendor>
-    <maven-forge-plugin.version>1.2.28</maven-forge-plugin.version>
+    <maven-forge-plugin.version>1.2.30</maven-forge-plugin.version>
+    <java.test.version>${java.build.version}</java.test.version>
+    <java.test.vendor>${java.build.vendor}</java.test.vendor>
     <maven-javadoc-plugin.version>3.1.1</maven-javadoc-plugin.version>
-    <finder.version>3.0</finder.version>
-    <surefire-plugin.version>3.0.0-M3</surefire-plugin.version>
-    <failsafe-plugin.version>3.0.0-M3</failsafe-plugin.version>
-    <testVM/>
+    <surefire-plugin.version>3.0.0-M4</surefire-plugin.version>
+    <failsafe-plugin.version>3.0.0-M4</failsafe-plugin.version>
     <slf4j.version>1.7.25</slf4j.version>
     <logback.version>1.2.3</logback.version>
     <junit.version>4.12</junit.version>
@@ -209,6 +209,12 @@
           <groupId>org.terracotta</groupId>
           <artifactId>maven-forge-plugin</artifactId>
           <version>${maven-forge-plugin.version}</version>
+          <configuration>
+            <jdk>
+              <version>${java.test.version}</version>
+              <vendor>${java.test.vendor}</vendor>
+            </jdk>
+          </configuration>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -348,6 +354,13 @@
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <skipTests>true</skipTests>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
       </plugin>
     </plugins>
@@ -403,11 +416,6 @@
         <groupId>ch.qos.logback</groupId>
         <artifactId>logback-core</artifactId>
         <version>${logback.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.terracotta</groupId>
-        <artifactId>maven-forge-plugin</artifactId>
-        <version>${maven-forge-plugin.version}</version>
       </dependency>
       <dependency>
         <groupId>junit</groupId>
