@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
+<!--
+  CHANGELOG (significant changes)
+  4.15:
+    Implicit execution of maven-forge-plugin,
+      projects no longer need to specify it for tests to work.
+  4.13:
+    Disabled junit (in favor of maven-forge-plugin)
+    Configurable JDK version/vendor for tests
+  4.12:
+    Removed finder
+
+  4.x:
+    Default JDK is now 1.8 and plugin versions are adjusted accordingly
+    (3.x remains on 1.6 and supports old plugins)
+-->
+
   <modelVersion>4.0.0</modelVersion>
   <organization>
     <name>Terracotta, Inc.</name>
@@ -349,6 +365,15 @@
       <plugin>
         <groupId>org.terracotta</groupId>
         <artifactId>maven-forge-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>default-test</id>
+            <phase>test</phase>
+            <goals>
+              <goal>test</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
