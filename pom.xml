@@ -3,8 +3,7 @@
 <!--
   CHANGELOG (significant changes)
   ?:
-    New forge-plugin
-    Exclude JAVA_HOME so that forge-plugin can override it
+    New forge-plugin (correctly sets JAVA_HOME)
 
   4.15:
     Implicit execution of maven-forge-plugin,
@@ -44,7 +43,7 @@
     <java.build.version>1.8</java.build.version>
     <!-- The vendor value to look for in toolchains.xml -->
     <java.build.vendor>zulu</java.build.vendor>
-    <maven-forge-plugin.version>1.2.32</maven-forge-plugin.version>
+    <maven-forge-plugin.version>1.2.33</maven-forge-plugin.version>
     <java.test.version>${java.build.version}</java.test.version>
     <java.test.vendor>${java.build.vendor}</java.test.vendor>
     <maven-javadoc-plugin.version>3.1.1</maven-javadoc-plugin.version>
@@ -232,11 +231,6 @@
               <version>${java.test.version}</version>
               <vendor>${java.test.vendor}</vendor>
             </jdk>
-            <!--
-              failsafe only honors JAVA_HOME being set by our subclass if
-              JAVA_HOME is on the exclude list:
-            -->
-            <excludedEnvironmentVariables>JAVA_HOME</excludedEnvironmentVariables>
           </configuration>
         </plugin>
         <plugin>
