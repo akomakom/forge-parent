@@ -2,9 +2,10 @@
 
 <!--
   CHANGELOG (significant changes)
-  ?:
-    New forge-plugin (correctly sets JAVA_HOME)
-
+  4.16:
+    New maven-forge-plugin (correctly sets JAVA_HOME)
+    Removed dependencies as this is the responsibility of child poms
+    Updated versions of commons-beanutils and jetty
   4.15:
     Implicit execution of maven-forge-plugin,
       projects no longer need to specify it for tests to work.
@@ -52,7 +53,7 @@
     <slf4j.version>1.7.25</slf4j.version>
     <logback.version>1.2.3</logback.version>
     <junit.version>4.12</junit.version>
-    <commons-beanutils.version>1.9.3</commons-beanutils.version>
+    <commons-beanutils.version>1.9.4</commons-beanutils.version>
     <hamcrest.version>2.1</hamcrest.version>
     <mockito-core.version>3.0.0</mockito-core.version>
     <commons-collections.version>3.2.2</commons-collections.version>
@@ -62,7 +63,7 @@
     <commons-logging.version>1.2</commons-logging.version>
     <jaxb-runtime.version>2.3.2</jaxb-runtime.version>
     <javax-activation.version>1.2.0</javax-activation.version>
-    <jetty.version>9.4.20.v20190813</jetty.version>
+    <jetty.version>9.4.28.v20200408</jetty.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.build.timestamp.format>yyyyMMdd-HHmmss</maven.build.timestamp.format>
     <build.timestamp>${maven.build.timestamp}</build.timestamp>
@@ -89,22 +90,7 @@
     <stagingProfile.openSource>6b2d2a23c465b</stagingProfile.openSource>
     <stagingProfile.public>6b2f08b6e4907</stagingProfile.public>
     <stagingProfile.private>6b2fc8d5c18d5</stagingProfile.private>
-</properties>
-
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.hamcrest</groupId>
-      <artifactId>hamcrest</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.mockito</groupId>
-      <artifactId>mockito-core</artifactId>
-    </dependency>
-  </dependencies>
+  </properties>
 
   <distributionManagement>
     <repository>
