@@ -2,6 +2,8 @@
 
 <!--
   CHANGELOG (significant changes)
+  4.17:
+    Switched to https:// for repositories, removed reflector
   4.16:
     New maven-forge-plugin (correctly sets JAVA_HOME)
     Removed dependencies as this is the responsibility of child poms
@@ -501,7 +503,7 @@
   <repositories>
     <repository>
       <id>terracotta-releases</id>
-      <url>http://www.terracotta.org/download/reflector/releases</url>
+      <url>https://repo.terracotta.org/maven2</url>
       <releases>
         <enabled>true</enabled>
       </releases>
@@ -513,7 +515,7 @@
   <pluginRepositories>
     <pluginRepository>
       <id>terracotta-releases</id>
-      <url>http://www.terracotta.org/download/reflector/releases</url>
+      <url>https://repo.terracotta.org/maven2</url>
       <releases>
         <enabled>true</enabled>
       </releases>
