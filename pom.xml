@@ -2,6 +2,8 @@
 
 <!--
   CHANGELOG (significant changes)
+  4.19:
+    New maven-forge-plugin (1.2.34) with git build-info support
   4.18:
     Adding snapshot repos
   4.17:
@@ -48,7 +50,7 @@
     <java.build.version>1.8</java.build.version>
     <!-- The vendor value to look for in toolchains.xml -->
     <java.build.vendor>zulu</java.build.vendor>
-    <maven-forge-plugin.version>1.2.33</maven-forge-plugin.version>
+    <maven-forge-plugin.version>1.2.34</maven-forge-plugin.version>
     <java.test.version>${java.build.version}</java.test.version>
     <java.test.vendor>${java.build.vendor}</java.test.vendor>
     <maven-javadoc-plugin.version>3.1.1</maven-javadoc-plugin.version>
