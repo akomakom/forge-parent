@@ -34,7 +34,7 @@
 
   <groupId>org.terracotta.forge</groupId>
   <artifactId>forge-parent</artifactId>
-  <version>4.19-SNAPSHOT</version>
+  <version>4.20-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>forge-parent</name>
