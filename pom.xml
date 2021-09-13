@@ -2,7 +2,7 @@
 
 <!--
   CHANGELOG (significant changes)
-  4.21:
+  5.0:
     Removed 3rd party deps in favor of terracotta-thirdparty-bom-4.x project
   4.20:
     New maven-forge-plugin (1.2.40) with corrected build-info support
