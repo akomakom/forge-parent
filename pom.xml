@@ -2,6 +2,8 @@
 
 <!--
   CHANGELOG (significant changes)
+  5.1:
+    Added nexus-staging-maven-plugin
   5.0:
     Removed 3rd party deps in favor of terracotta-thirdparty-bom-4.x project
   4.20:
@@ -259,6 +261,19 @@
           <configuration>
             <skipITs>${skipTests}</skipITs>
             <reuseForks>false</reuseForks>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.sonatype.plugins</groupId>
+          <artifactId>nexus-staging-maven-plugin</artifactId>
+          <version>1.6.8</version>
+          <extensions>true</extensions>
+          <configuration>
+            <!-- The Base URL of Nexus instance where we want to stage -->
+            <nexusUrl>http://nexus.terracotta.eur.ad.sag</nexusUrl>
+            <!-- The server "id" element from settings to use authentication from -->
+            <serverId>terracotta-nexus-staging</serverId>
+            <skipNexusStagingDeployMojo>${skipDeploy}</skipNexusStagingDeployMojo>
           </configuration>
         </plugin>
       </plugins>
