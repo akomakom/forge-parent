@@ -2,6 +2,9 @@
 
 <!--
   CHANGELOG (significant changes)
+  5.2:
+    Moving maven-forge-plugin default test executions to pluginManagement
+    Adding integration test execution and excluding **/*IT.java
   5.1:
     Added nexus-staging-maven-plugin
   5.0:
@@ -116,6 +119,48 @@
         </repository>
       </distributionManagement>
     </profile>
+
+    <profile>
+      <!-- For system test projects that only have integration tests -->
+      <!-- Removes surefire execution and runs all tests in failsafe -->
+      <id>system-tests</id>
+      <build>
+        <pluginManagement>
+          <plugins>
+            <plugin>
+              <groupId>org.terracotta</groupId>
+              <artifactId>maven-forge-plugin</artifactId>
+              <version>${maven-forge-plugin.version}</version>
+              <configuration>
+                <includes>
+                  <!-- pick up anything, not just **IT.java -->
+                  <include>**/*.java</include>
+                </includes>
+              </configuration>
+              <executions>
+                <!-- disable unit tests -->
+                <execution>
+                  <id>default-test</id>
+                  <phase>none</phase>
+                </execution>
+                <execution>
+                  <id>default-integration-test</id>
+                  <goals>
+                    <goal>integration-test</goal>
+                  </goals>
+                </execution>
+                <execution>
+                  <id>default-verify</id>
+                  <goals>
+                    <goal>verify</goal>
+                  </goals>
+                </execution>
+              </executions>
+            </plugin>
+          </plugins>
+        </pluginManagement>
+      </build>
+    </profile>
   </profiles>
 
   <build>
@@ -211,6 +256,32 @@
           <groupId>org.terracotta</groupId>
           <artifactId>maven-forge-plugin</artifactId>
           <version>${maven-forge-plugin.version}</version>
+          <!-- Reasonable defaults: all non *IT.java in surefire, *IT.java in failsafe -->
+          <!-- This also enables failsafe for all projects -->
+          <!-- Also see system-tests profile that changes this behavior -->
+          <executions>
+            <execution>
+              <id>default-test</id>
+              <goals>
+                <goal>test</goal>
+              </goals>
+              <configuration>
+                <excludes>**/*IT.java</excludes>
+              </configuration>
+            </execution>
+            <execution>
+              <id>default-integration-test</id>
+              <goals>
+                <goal>integration-test</goal>
+              </goals>
+            </execution>
+            <execution>
+              <id>default-verify</id>
+              <goals>
+                <goal>verify</goal>
+              </goals>
+            </execution>
+          </executions>
           <configuration>
             <jdk>
               <version>${java.test.version}</version>
@@ -366,15 +437,6 @@
       <plugin>
         <groupId>org.terracotta</groupId>
         <artifactId>maven-forge-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>default-test</id>
-            <phase>test</phase>
-            <goals>
-              <goal>test</goal>
-            </goals>
-          </execution>
-        </executions>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
