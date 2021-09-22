@@ -2,7 +2,7 @@
 
 <!--
   CHANGELOG (significant changes)
-  5.4:
+  5.5:
     Remove surefire default execution instead of passing skip to it
   5.2:
     Moving maven-forge-plugin default test executions to pluginManagement
@@ -319,6 +319,12 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-plugin</artifactId>
           <version>${surefire-plugin.version}</version>
+          <executions>
+            <execution>
+              <id>default-test</id>
+              <phase>none</phase>
+            </execution>
+          </executions>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
