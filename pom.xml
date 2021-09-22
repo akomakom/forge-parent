@@ -2,6 +2,8 @@
 
 <!--
   CHANGELOG (significant changes)
+  5.4:
+    Remove surefire default execution instead of passing skip to it
   5.2:
     Moving maven-forge-plugin default test executions to pluginManagement
     Adding integration test execution and excluding **/*IT.java
@@ -312,6 +314,7 @@
             </execution>
           </executions>
         </plugin>
+        <!-- NOTE: no default executions defined for surefire/failsafe since we use maven-forge-plugin -->
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-plugin</artifactId>
@@ -437,13 +440,6 @@
       <plugin>
         <groupId>org.terracotta</groupId>
         <artifactId>maven-forge-plugin</artifactId>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <configuration>
-          <skipTests>true</skipTests>
-        </configuration>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
