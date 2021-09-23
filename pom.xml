@@ -2,6 +2,8 @@
 
 <!--
   CHANGELOG (significant changes)
+  5.6:
+    Cleaner plugins and new plugin version vars for downstream
   5.5:
     Remove surefire default execution instead of passing skip to it
   5.2:
@@ -67,6 +69,9 @@
     <maven-javadoc-plugin.version>3.1.1</maven-javadoc-plugin.version>
     <surefire-plugin.version>3.0.0-M4</surefire-plugin.version>
     <failsafe-plugin.version>3.0.0-M4</failsafe-plugin.version>
+    <findbugs-plugin.version>3.0.5</findbugs-plugin.version>
+    <source-plugin.version>3.1.0</source-plugin.version>
+    <checkstyle-plugin.version>3.1.0</checkstyle-plugin.version>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.build.timestamp.format>yyyyMMdd-HHmmss</maven.build.timestamp.format>
@@ -171,7 +176,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-source-plugin</artifactId>
-          <version>3.1.0</version>
+          <version>${source-plugin.version}</version>
           <configuration>
             <forceCreation>true</forceCreation>
           </configuration>
@@ -197,7 +202,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-checkstyle-plugin</artifactId>
-          <version>3.1.0</version>
+          <version>${checkstyle-plugin.version}</version>
           <dependencies>
             <dependency>
               <groupId>com.puppycrawl.tools</groupId>
@@ -252,6 +257,9 @@
           <configuration>
             <source>${java.build.version}</source>
             <target>${java.build.version}</target>
+            <fork>true</fork>
+            <meminitial>128m</meminitial>
+            <maxmem>512m</maxmem>
           </configuration>
         </plugin>
         <plugin>
@@ -377,13 +385,6 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-          <source>${java.build.version}</source>
-          <target>${java.build.version}</target>
-          <fork>true</fork>
-          <meminitial>128m</meminitial>
-          <maxmem>512m</maxmem>
-        </configuration>
       </plugin>
       <!-- Ensure that we are compiling with the correct JDK even if we are running on a later version -->
       <plugin>
@@ -429,7 +430,7 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>findbugs-maven-plugin</artifactId>
-        <version>3.0.5</version>
+        <version>${findbugs-plugin.version}</version>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
