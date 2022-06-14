@@ -2,6 +2,9 @@
 
 <!--
   CHANGELOG (significant changes)
+  5.8:
+    Replacing S3 with nexus repos
+    Explicitly adding nexus snapshot repos, allows building without a settings.xml
   5.7:
     correcting forge-plugin exclude pattern
   5.6:
@@ -89,15 +92,15 @@
     <checkstyle-config-file>terracotta-checkstyle/checkstyle.xml</checkstyle-config-file>
     <checkstyle-header-file>terracotta-checkstyle/header.txt</checkstyle-header-file>
 
-    <terracotta-os-snapshots-url>http://nexus.terracotta.eur.ad.sag/content/repositories/terracotta-os-snapshots</terracotta-os-snapshots-url>
-    <terracotta-snapshots-url>http://nexus.terracotta.eur.ad.sag/content/repositories/terracotta-snapshots</terracotta-snapshots-url>
-    <terracotta-ee-snapshots-url>http://nexus.terracotta.eur.ad.sag/content/repositories/terracotta-ee-snapshots</terracotta-ee-snapshots-url>
-    <terracotta-staging-url>http://nexus.terracotta.eur.ad.sag/content/repositories/terracotta-staging</terracotta-staging-url>
-    <terracotta-os-releases-url>http://nexus.terracotta.eur.ad.sag/content/repositories/terracotta-os-releases</terracotta-os-releases-url>
-    <terracotta-releases-url>http://nexus.terracotta.eur.ad.sag/content/repositories/terracotta-releases</terracotta-releases-url>
-    <terracotta-ee-releases-url>http://nexus.terracotta.eur.ad.sag/content/repositories/terracotta-ee-releases</terracotta-ee-releases-url>
-    <terracotta-patches-url>http://nexus.terracotta.eur.ad.sag/content/repositories/terracotta-patches</terracotta-patches-url>
-    <terracotta-nexus-staging-url>http://nexus.terracotta.eur.ad.sag/service/local/staging/deploy/maven2</terracotta-nexus-staging-url>
+    <terracotta-os-snapshots-url>https://nexus.terracotta.eur.ad.sag:8443/content/repositories/terracotta-os-snapshots</terracotta-os-snapshots-url>
+    <terracotta-snapshots-url>https://nexus.terracotta.eur.ad.sag:8443/content/repositories/terracotta-snapshots</terracotta-snapshots-url>
+    <terracotta-ee-snapshots-url>https://nexus.terracotta.eur.ad.sag:8443/content/repositories/terracotta-ee-snapshots</terracotta-ee-snapshots-url>
+    <terracotta-staging-url>https://nexus.terracotta.eur.ad.sag:8443/content/repositories/terracotta-staging</terracotta-staging-url>
+    <terracotta-os-releases-url>https://nexus.terracotta.eur.ad.sag:8443/content/repositories/terracotta-os-releases</terracotta-os-releases-url>
+    <terracotta-releases-url>https://nexus.terracotta.eur.ad.sag:8443/content/repositories/terracotta-releases</terracotta-releases-url>
+    <terracotta-ee-releases-url>https://nexus.terracotta.eur.ad.sag:8443/content/repositories/terracotta-ee-releases</terracotta-ee-releases-url>
+    <terracotta-patches-url>https://nexus.terracotta.eur.ad.sag:8443/content/repositories/terracotta-patches</terracotta-patches-url>
+    <terracotta-nexus-staging-url>https://nexus.terracotta.eur.ad.sag:8443/service/local/staging/deploy/maven2</terracotta-nexus-staging-url>
     <stagingProfile.openSource>6b2d2a23c465b</stagingProfile.openSource>
     <stagingProfile.public>6b2f08b6e4907</stagingProfile.public>
     <stagingProfile.private>6b2fc8d5c18d5</stagingProfile.private>
@@ -470,24 +473,32 @@
 
   <repositories>
     <repository>
-      <id>terracotta-snapshots</id>
-      <url>https://snapshots.terracotta.org/</url>
-      <releases>
-        <enabled>false</enabled>
-      </releases>
+      <id>terracotta-os-releases</id>
+      <url>${terracotta-os-releases-url}</url>
       <snapshots>
-        <enabled>true</enabled>
+        <enabled>false</enabled>
       </snapshots>
     </repository>
     <repository>
-      <id>terracotta-releases</id>
-      <url>https://repo.terracotta.org/maven2</url>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
+      <id>terracotta-ee-releases</id>
+      <url>${terracotta-ee-releases-url}</url>
       <snapshots>
         <enabled>false</enabled>
       </snapshots>
+    </repository>
+    <repository>
+      <id>terracotta-os-snapshots</id>
+      <url>${terracotta-os-snapshots-url}</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+    </repository>
+    <repository>
+      <id>terracotta-ee-snapshots</id>
+      <url>${terracotta-ee-snapshots-url}</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
     </repository>
   </repositories>
 
@@ -498,16 +509,10 @@
       <releases>
         <enabled>false</enabled>
       </releases>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
     </pluginRepository>
     <pluginRepository>
       <id>terracotta-releases</id>
       <url>https://repo.terracotta.org/maven2</url>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
       <snapshots>
         <enabled>false</enabled>
       </snapshots>
