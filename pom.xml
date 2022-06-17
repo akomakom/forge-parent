@@ -2,6 +2,8 @@
 
 <!--
   CHANGELOG (significant changes)
+  5.9:
+    Revert S3 repo changes in forge-parent
   5.8:
     Replacing S3 with nexus repos
     Explicitly adding nexus snapshot repos, allows building without a settings.xml
@@ -473,32 +475,18 @@
 
   <repositories>
     <repository>
-      <id>terracotta-os-releases</id>
-      <url>${terracotta-os-releases-url}</url>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </repository>
-    <repository>
-      <id>terracotta-ee-releases</id>
-      <url>${terracotta-ee-releases-url}</url>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </repository>
-    <repository>
-      <id>terracotta-os-snapshots</id>
-      <url>${terracotta-os-snapshots-url}</url>
+      <id>terracotta-snapshots</id>
+      <url>https://snapshots.terracotta.org/</url>
       <releases>
         <enabled>false</enabled>
       </releases>
     </repository>
     <repository>
-      <id>terracotta-ee-snapshots</id>
-      <url>${terracotta-ee-snapshots-url}</url>
-      <releases>
+      <id>terracotta-releases</id>
+      <url>https://repo.terracotta.org/maven2</url>
+      <snapshots>
         <enabled>false</enabled>
-      </releases>
+      </snapshots>
     </repository>
   </repositories>
 
