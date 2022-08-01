@@ -2,6 +2,8 @@
 
 <!--
   CHANGELOG (significant changes)
+  6.0:
+    Move java.build.version to 1.11
   5.9:
     Revert S3 repo changes in forge-parent
   5.8:
@@ -54,7 +56,7 @@
 
   <groupId>org.terracotta.forge</groupId>
   <artifactId>forge-parent</artifactId>
-  <version>5.10-SNAPSHOT</version>
+  <version>6.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>forge-parent</name>
@@ -66,8 +68,8 @@
 
   <properties>
     <!-- NOTE: to override these when using maven release plugin use this format:
-      -Darguments=-Djava.build.version=9 -->
-    <java.build.version>1.8</java.build.version>
+      -Darguments=-Djava.build.version=1.9 -->
+    <java.build.version>1.11</java.build.version>
     <!-- The vendor value to look for in toolchains.xml -->
     <java.build.vendor>zulu</java.build.vendor>
     <maven-forge-plugin.version>1.2.40</maven-forge-plugin.version>
