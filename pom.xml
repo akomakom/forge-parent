@@ -2,6 +2,9 @@
 
 <!--
   CHANGELOG (significant changes)
+  6.1:
+    Move to modern jdk numbering for -Djava.X.version,
+      eg 11 instead of 1.11, keep toolchains references at 1.11
   6.0:
     Move java.build.version to 1.11
   5.9:
@@ -69,7 +72,7 @@
   <properties>
     <!-- NOTE: to override these when using maven release plugin use this format:
       -Darguments=-Djava.build.version=1.9 -->
-    <java.build.version>1.11</java.build.version>
+    <java.build.version>11</java.build.version>
     <!-- The vendor value to look for in toolchains.xml -->
     <java.build.vendor>zulu</java.build.vendor>
     <maven-forge-plugin.version>1.2.40</maven-forge-plugin.version>
@@ -305,7 +308,7 @@
           </executions>
           <configuration>
             <jdk>
-              <version>${java.test.version}</version>
+              <version>1.${java.test.version}</version>
               <vendor>${java.test.vendor}</vendor>
             </jdk>
           </configuration>
@@ -412,7 +415,7 @@
         <configuration>
           <toolchains>
             <jdk>
-              <version>${java.build.version}</version>
+              <version>1.${java.build.version}</version>
               <vendor>${java.build.vendor}</vendor>
             </jdk>
           </toolchains>
