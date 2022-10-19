@@ -59,7 +59,7 @@
 
   <groupId>org.terracotta.forge</groupId>
   <artifactId>forge-parent</artifactId>
-  <version>6.2-SNAPSHOT</version>
+  <version>7.0</version>
   <packaging>pom</packaging>
 
   <name>forge-parent</name>
@@ -75,15 +75,15 @@
     <java.build.version>11</java.build.version>
     <!-- The vendor value to look for in toolchains.xml -->
     <java.build.vendor>zulu</java.build.vendor>
-    <maven-forge-plugin.version>1.2.40</maven-forge-plugin.version>
+    <maven-forge-plugin.version>2.0.0</maven-forge-plugin.version>
     <java.test.version>${java.build.version}</java.test.version>
     <java.test.vendor>${java.build.vendor}</java.test.vendor>
-    <maven-javadoc-plugin.version>3.1.1</maven-javadoc-plugin.version>
+    <maven-javadoc-plugin.version>3.4.1</maven-javadoc-plugin.version>
     <surefire-plugin.version>3.0.0-M4</surefire-plugin.version>
     <failsafe-plugin.version>3.0.0-M4</failsafe-plugin.version>
     <findbugs-plugin.version>3.0.5</findbugs-plugin.version>
-    <source-plugin.version>3.1.0</source-plugin.version>
-    <checkstyle-plugin.version>3.1.0</checkstyle-plugin.version>
+    <source-plugin.version>3.2.1</source-plugin.version>
+    <checkstyle-plugin.version>3.2.0</checkstyle-plugin.version>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.build.timestamp.format>yyyyMMdd-HHmmss</maven.build.timestamp.format>
@@ -111,7 +111,7 @@
     <stagingProfile.openSource>6b2d2a23c465b</stagingProfile.openSource>
     <stagingProfile.public>6b2f08b6e4907</stagingProfile.public>
     <stagingProfile.private>6b2fc8d5c18d5</stagingProfile.private>
-</properties>
+  </properties>
 
   <distributionManagement>
     <repository>
@@ -138,48 +138,6 @@
         </repository>
       </distributionManagement>
     </profile>
-
-    <profile>
-      <!-- For system test projects that only have integration tests -->
-      <!-- Removes surefire execution and runs all tests in failsafe -->
-      <id>system-tests</id>
-      <build>
-        <pluginManagement>
-          <plugins>
-            <plugin>
-              <groupId>org.terracotta</groupId>
-              <artifactId>maven-forge-plugin</artifactId>
-              <version>${maven-forge-plugin.version}</version>
-              <configuration>
-                <includes>
-                  <!-- pick up anything, not just **IT.java -->
-                  <include>**/*.java</include>
-                </includes>
-              </configuration>
-              <executions>
-                <!-- disable unit tests -->
-                <execution>
-                  <id>default-test</id>
-                  <phase>none</phase>
-                </execution>
-                <execution>
-                  <id>default-integration-test</id>
-                  <goals>
-                    <goal>integration-test</goal>
-                  </goals>
-                </execution>
-                <execution>
-                  <id>default-verify</id>
-                  <goals>
-                    <goal>verify</goal>
-                  </goals>
-                </execution>
-              </executions>
-            </plugin>
-          </plugins>
-        </pluginManagement>
-      </build>
-    </profile>
   </profiles>
 
   <build>
@@ -205,7 +163,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-pmd-plugin</artifactId>
-          <version>3.12.0</version>
+          <version>3.19.0</version>
           <configuration>
             <aggregate>true</aggregate>
             <targetJdk>${java.build.version}</targetJdk>
@@ -219,7 +177,7 @@
             <dependency>
               <groupId>com.puppycrawl.tools</groupId>
               <artifactId>checkstyle</artifactId>
-              <version>8.24</version>
+              <version>10.3.4</version>
             </dependency>
             <dependency>
               <groupId>${checkstyle-groupId}</groupId>
@@ -230,7 +188,7 @@
           <configuration>
             <configLocation>${checkstyle-config-file}</configLocation>
             <headerLocation>${checkstyle-header-file}</headerLocation>
-            <encoding>UTF-8</encoding>
+            <inputEncoding>UTF-8</inputEncoding>
             <consoleOutput>true</consoleOutput>
             <failsOnError>false</failsOnError>
             <failOnViolation>false</failOnViolation>
@@ -252,7 +210,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-deploy-plugin</artifactId>
-          <version>3.0.0-M1</version>
+          <version>3.0.0</version>
           <configuration>
             <skip>${skipDeploy}</skip>
           </configuration>
@@ -265,7 +223,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.8.1</version>
+          <version>3.10.1</version>
           <configuration>
             <source>${java.build.version}</source>
             <target>${java.build.version}</target>
@@ -368,7 +326,7 @@
         <plugin>
           <groupId>org.sonatype.plugins</groupId>
           <artifactId>nexus-staging-maven-plugin</artifactId>
-          <version>1.6.8</version>
+          <version>1.6.13</version>
           <extensions>true</extensions>
           <configuration>
             <!-- The Base URL of Nexus instance where we want to stage -->
@@ -377,6 +335,26 @@
             <serverId>terracotta-nexus-staging</serverId>
             <skipNexusStagingDeployMojo>${skipDeploy}</skipNexusStagingDeployMojo>
           </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>3.3.0</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-toolchains-plugin</artifactId>
+          <version>3.1.0</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-enforcer-plugin</artifactId>
+          <version>3.1.0</version>
+        </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>findbugs-maven-plugin</artifactId>
+          <version>${findbugs-plugin.version}</version>
         </plugin>
       </plugins>
     </pluginManagement>
@@ -387,7 +365,6 @@
       </plugin>
       <plugin>
         <artifactId>maven-jar-plugin</artifactId>
-        <version>3.1.2</version>
         <configuration>
           <archive>
             <manifestEntries>
@@ -404,7 +381,6 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-toolchains-plugin</artifactId>
-        <version>3.0.0</version>
         <executions>
           <execution>
             <goals>
@@ -424,7 +400,6 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-enforcer-plugin</artifactId>
-        <version>3.0.0-M2</version>
         <executions>
           <execution>
             <id>enforce-java</id>
@@ -444,7 +419,6 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>findbugs-maven-plugin</artifactId>
-        <version>${findbugs-plugin.version}</version>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -457,10 +431,6 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-deploy-plugin</artifactId>
-      </plugin>
-      <plugin>
-        <groupId>org.terracotta</groupId>
-        <artifactId>maven-forge-plugin</artifactId>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
