@@ -2,6 +2,9 @@
 
 <!--
   CHANGELOG (significant changes)
+  7.0:
+    Update various dependencies/plugins for Java11 system tests
+    Move system-tests profile into the system-tests-parent pom
   6.1:
     Move to modern jdk numbering for -Djava.X.version,
       eg 11 instead of 1.11, keep toolchains references at 1.11
@@ -59,7 +62,7 @@
 
   <groupId>org.terracotta.forge</groupId>
   <artifactId>forge-parent</artifactId>
-  <version>7.0</version>
+  <version>7.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>forge-parent</name>
@@ -79,8 +82,8 @@
     <java.test.version>${java.build.version}</java.test.version>
     <java.test.vendor>${java.build.vendor}</java.test.vendor>
     <maven-javadoc-plugin.version>3.4.1</maven-javadoc-plugin.version>
-    <surefire-plugin.version>3.0.0-M4</surefire-plugin.version>
-    <failsafe-plugin.version>3.0.0-M4</failsafe-plugin.version>
+    <surefire-plugin.version>3.0.0-M7</surefire-plugin.version>
+    <failsafe-plugin.version>3.0.0-M7</failsafe-plugin.version>
     <findbugs-plugin.version>3.0.5</findbugs-plugin.version>
     <source-plugin.version>3.2.1</source-plugin.version>
     <checkstyle-plugin.version>3.2.0</checkstyle-plugin.version>
