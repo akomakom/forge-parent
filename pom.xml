@@ -4,7 +4,7 @@
   CHANGELOG (significant changes)
   8.0:
     Updated project license and urls
-    Now requires to set property: terracotta.nexus.url
+    Now requires to set property: nexusUrl
   7.0:
     Update various dependencies/plugins for Java11 system tests
     Move system-tests profile into the system-tests-parent pom
@@ -105,17 +105,18 @@
     <checkstyle-config-file>terracotta-checkstyle/checkstyle.xml</checkstyle-config-file>
     <checkstyle-header-file>terracotta-checkstyle/header.txt</checkstyle-header-file>
 
-    <terracotta.nexus.url>UNSET</terracotta.nexus.url>
+    <!-- eg: http://my.nexus.domain -->
+    <nexusUrl>UNSET</nexusUrl>
     
-    <terracotta-os-snapshots-url>${terracotta.nexus.url}/content/repositories/terracotta-os-snapshots</terracotta-os-snapshots-url>
-    <terracotta-snapshots-url>${terracotta.nexus.url}/content/repositories/terracotta-snapshots</terracotta-snapshots-url>
-    <terracotta-ee-snapshots-url>${terracotta.nexus.url}/content/repositories/terracotta-ee-snapshots</terracotta-ee-snapshots-url>
-    <terracotta-staging-url>${terracotta.nexus.url}/content/repositories/terracotta-staging</terracotta-staging-url>
-    <terracotta-os-releases-url>${terracotta.nexus.url}/content/repositories/terracotta-os-releases</terracotta-os-releases-url>
-    <terracotta-releases-url>${terracotta.nexus.url}/content/repositories/terracotta-releases</terracotta-releases-url>
-    <terracotta-ee-releases-url>${terracotta.nexus.url}/content/repositories/terracotta-ee-releases</terracotta-ee-releases-url>
-    <terracotta-patches-url>${terracotta.nexus.url}/content/repositories/terracotta-patches</terracotta-patches-url>
-    <terracotta-nexus-staging-url>${terracotta.nexus.url}/service/local/staging/deploy/maven2</terracotta-nexus-staging-url>
+    <terracotta-os-snapshots-url>${nexusUrl}/content/repositories/terracotta-os-snapshots</terracotta-os-snapshots-url>
+    <terracotta-snapshots-url>${nexusUrl}/content/repositories/terracotta-snapshots</terracotta-snapshots-url>
+    <terracotta-ee-snapshots-url>${nexusUrl}/content/repositories/terracotta-ee-snapshots</terracotta-ee-snapshots-url>
+    <terracotta-staging-url>${nexusUrl}/content/repositories/terracotta-staging</terracotta-staging-url>
+    <terracotta-os-releases-url>${nexusUrl}/content/repositories/terracotta-os-releases</terracotta-os-releases-url>
+    <terracotta-releases-url>${nexusUrl}/content/repositories/terracotta-releases</terracotta-releases-url>
+    <terracotta-ee-releases-url>${nexusUrl}/content/repositories/terracotta-ee-releases</terracotta-ee-releases-url>
+    <terracotta-patches-url>${nexusUrl}/content/repositories/terracotta-patches</terracotta-patches-url>
+    <terracotta-nexus-staging-url>${nexusUrl}/service/local/staging/deploy/maven2</terracotta-nexus-staging-url>
     <stagingProfile.openSource>6b2d2a23c465b</stagingProfile.openSource>
     <stagingProfile.public>6b2f08b6e4907</stagingProfile.public>
     <stagingProfile.private>6b2fc8d5c18d5</stagingProfile.private>
@@ -338,7 +339,7 @@
           <extensions>true</extensions>
           <configuration>
             <!-- The Base URL of Nexus instance where we want to stage -->
-            <nexusUrl>${terracotta.nexus.url}</nexusUrl>
+            <nexusUrl>${nexusUrl}</nexusUrl>
             <!-- The server "id" element from settings to use authentication from -->
             <serverId>terracotta-nexus-staging</serverId>
             <skipNexusStagingDeployMojo>${skipDeploy}</skipNexusStagingDeployMojo>
